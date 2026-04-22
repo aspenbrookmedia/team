@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes">
 <title>Aspen Brook Media — The Team</title>
-<meta property="og:title" content="Aspen Brook Media · 21 AI Employees">
+<meta property="og:title" content="Aspen Brook Media · 24 AI Employees">
 <meta property="og:description" content="The world runs on a 24-hour clock. Women don't. So we became the architects, and built AI to do the rest.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -96,8 +96,8 @@
     background: var(--deep-brown);
     color: var(--ivory);
     border-radius: 20px;
-    padding: 48px;
-    margin-bottom: 48px;
+    padding: 36px 40px;
+    margin-bottom: 40px;
     position: relative;
     overflow: hidden;
   }
@@ -139,11 +139,11 @@
   .tagline-text {
     font-family: 'League Spartan', sans-serif;
     font-weight: 700;
-    font-size: 42px;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
+    font-size: 32px;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
     color: var(--ivory);
-    max-width: 860px;
+    max-width: 760px;
     position: relative;
     z-index: 1;
   }
@@ -971,8 +971,8 @@
 
   @media (max-width: 640px) {
     .wrap { padding: 28px 18px 80px; }
-    .tagline-banner { padding: 32px 26px; }
-    .tagline-text { font-size: 26px; }
+    .tagline-banner { padding: 28px 22px; }
+    .tagline-text { font-size: 22px; }
     .phase-title { font-size: 44px; }
     .phase-hero { padding: 36px 26px; }
     .cta-title { font-size: 36px; }
@@ -980,6 +980,78 @@
     .feature-grid { grid-template-columns: 1fr; }
     .card { width: 240px; }
     .children-row { gap: 16px; }
+  }
+
+  /* TREE ZOOM CONTROLS */
+  .tree-zoom-inner {
+    transform-origin: top center;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
+    min-width: 100%;
+  }
+
+  .zoom-controls {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    background: var(--ivory-warm);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 10px 28px -10px rgba(38, 26, 20, 0.25);
+  }
+
+  .zoom-btn {
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    color: var(--deep-brown);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    transition: background 0.15s ease, color 0.15s ease;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .zoom-btn:last-child { border-bottom: none; }
+  .zoom-btn:hover { background: var(--berry-ghost); color: var(--berry); }
+  .zoom-btn:active { background: var(--berry); color: var(--ivory); }
+
+  .zoom-btn svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .zoom-level {
+    width: 44px;
+    padding: 6px 0;
+    text-align: center;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--brown-muted);
+    background: var(--ivory-deep);
+    border-bottom: 1px solid var(--line);
+  }
+
+  @media (max-width: 640px) {
+    .zoom-controls { bottom: 16px; right: 16px; }
+    .zoom-btn { width: 40px; height: 40px; }
+    .zoom-level { width: 40px; }
   }
 </style>
 </head>
@@ -1008,12 +1080,13 @@
   <div class="tab-content active" id="org">
 
     <div class="intro-quote">
-      <p>"We don't hire people to do process work. We train humans to become AI architects — then they build the AI employees that handle the rest. A team of 4, operating like a team of 25."</p>
+      <p>"I don't hire people to do tasks AI can do. I train humans to become AI architects. Then we build AI employees to handle the rest."</p>
       <span class="hint">Tap any card to explore · Tap <strong>AI Employees</strong> to see who's doing the work</span>
     </div>
 
     <!-- TREE -->
     <div class="tree-wrap">
+      <div class="tree-zoom-inner" id="tree-zoom-inner">
       <div class="tree">
 
         <!-- LEVEL 1: ASPEN -->
@@ -1239,7 +1312,7 @@
               </div>
               <div class="pills">
                 <button class="pill agents-pill" data-agents="ankush-agents">
-                  <span class="dot"></span>2 AI Employees
+                  <span class="dot"></span>5 AI Employees
                   <svg class="chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
                     <path d="M2 4L5 7L8 4" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
@@ -1261,12 +1334,34 @@
                     <div class="agent-desc">Conversion rates, keyword volume, and sequence health. Weekly digests.</div>
                   </div>
                 </div>
+                <div class="agent-row">
+                  <div class="agent-icon">SO</div>
+                  <div class="agent-content">
+                    <div class="agent-name">Sequence Optimizer</div>
+                    <div class="agent-desc">A/B tests subject lines and CTAs across Kit sequences. Calls the winners.</div>
+                  </div>
+                </div>
+                <div class="agent-row">
+                  <div class="agent-icon">FD</div>
+                  <div class="agent-content">
+                    <div class="agent-name">Funnel Debug Agent</div>
+                    <div class="agent-desc">When a flow breaks, diagnoses why and suggests the fix before Ankush even opens the dashboard.</div>
+                  </div>
+                </div>
+                <div class="agent-row">
+                  <div class="agent-icon">LP</div>
+                  <div class="agent-content">
+                    <div class="agent-name">Landing Page Writer</div>
+                    <div class="agent-desc">Drafts sales page copy from brief, voice doc, and conversion principles. Ready for review.</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
         </div>
 
+      </div>
       </div>
     </div>
 
@@ -1389,6 +1484,20 @@
 
 </div>
 
+<!-- ZOOM CONTROLS -->
+<div class="zoom-controls" aria-label="Zoom controls">
+  <button class="zoom-btn" id="zoom-in" aria-label="Zoom in" title="Zoom in">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+  </button>
+  <div class="zoom-level" id="zoom-level">100%</div>
+  <button class="zoom-btn" id="zoom-out" aria-label="Zoom out" title="Zoom out">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="8" y1="11" x2="14" y2="11"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+  </button>
+  <button class="zoom-btn" id="zoom-reset" aria-label="Reset zoom" title="Reset to 100%">
+    <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7"/><polyline points="3 3 3 9 9 9"/></svg>
+  </button>
+</div>
+
 <script>
   // Tab switching
   const tabs = document.querySelectorAll('.tab');
@@ -1426,6 +1535,57 @@
       card.classList.toggle('expanded');
       agentsPill.classList.toggle('active');
     });
+  });
+
+  // ZOOM CONTROLS - scale the tree inner container
+  const zoomLevels = [0.4, 0.5, 0.6, 0.75, 0.9, 1.0, 1.15, 1.35, 1.6, 2.0];
+  let zoomIndex = 5; // start at 100%
+  const treeInner = document.getElementById('tree-zoom-inner');
+  const zoomInBtn = document.getElementById('zoom-in');
+  const zoomOutBtn = document.getElementById('zoom-out');
+  const zoomResetBtn = document.getElementById('zoom-reset');
+  const zoomLabel = document.getElementById('zoom-level');
+
+  function applyZoom() {
+    const z = zoomLevels[zoomIndex];
+    if (treeInner) {
+      treeInner.style.transform = 'scale(' + z + ')';
+    }
+    zoomLabel.textContent = Math.round(z * 100) + '%';
+  }
+
+  zoomInBtn.addEventListener('click', () => {
+    if (zoomIndex < zoomLevels.length - 1) {
+      zoomIndex++;
+      applyZoom();
+    }
+  });
+
+  zoomOutBtn.addEventListener('click', () => {
+    if (zoomIndex > 0) {
+      zoomIndex--;
+      applyZoom();
+    }
+  });
+
+  zoomResetBtn.addEventListener('click', () => {
+    zoomIndex = 5;
+    applyZoom();
+  });
+
+  // Keyboard shortcuts: Cmd/Ctrl + / - / 0
+  document.addEventListener('keydown', (e) => {
+    if (!(e.metaKey || e.ctrlKey)) return;
+    if (e.key === '=' || e.key === '+') {
+      e.preventDefault();
+      zoomInBtn.click();
+    } else if (e.key === '-') {
+      e.preventDefault();
+      zoomOutBtn.click();
+    } else if (e.key === '0') {
+      e.preventDefault();
+      zoomResetBtn.click();
+    }
   });
 </script>
 </body>
