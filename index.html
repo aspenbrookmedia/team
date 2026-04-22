@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aspen Brook Media — The Team</title>
+<meta property="og:title" content="Aspen Brook Media · 16 AI Employees">
+<meta property="og:description" content="The world runs on a 24-hour clock. Women don't. So we became the architects, and built AI to do the rest.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --berry: #A63248;
+    --berry-deep: #7A2435;
+    --berry-soft: #F5DDE2;
+    --berry-ghost: #FBEFF1;
+    --ivory: #F9F5F2;
+    --ivory-warm: #FDFAF6;
+    --ivory-deep: #F2ECE4;
+    --deep-brown: #261A14;
+    --brown-soft: #6B564A;
+    --brown-muted: #9B8577;
+    --line: #E8DED0;
+    --line-soft: #EFE7DB;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: var(--ivory);
+    color: var(--deep-brown);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 12% 8%, rgba(166, 50, 72, 0.08), transparent 45%),
+      radial-gradient(circle at 88% 35%, rgba(166, 50, 72, 0.06), transparent 50%),
+      radial-gradient(circle at 50% 95%, rgba(38, 26, 20, 0.04), transparent 55%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 40px 32px 100px;
+  }
+
+  /* HEADER */
+  header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .brand {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--deep-brown);
+  }
+
+  .brand em {
+    font-style: normal;
+    font-weight: 400;
+    color: var(--berry);
+  }
+
+  .meta {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--brown-muted);
+  }
+
+  /* TAGLINE BANNER */
+  .tagline-banner {
+    background: var(--deep-brown);
+    color: var(--ivory);
+    border-radius: 20px;
+    padding: 48px 48px;
+    margin-bottom: 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tagline-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(166, 50, 72, 0.35), transparent 60%);
+    pointer-events: none;
+  }
+
+  .tagline-banner::after {
+    content: '';
+    position: absolute;
+    bottom: -40%;
+    left: -5%;
+    width: 360px;
+    height: 360px;
+    background: radial-gradient(circle, rgba(166, 50, 72, 0.18), transparent 70%);
+    pointer-events: none;
+  }
+
+  .tagline-label {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--berry-soft);
+    margin-bottom: 22px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .tagline-text {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--ivory);
+    max-width: 860px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .tagline-text .line-two {
+    display: block;
+    color: var(--berry-soft);
+    margin-top: 4px;
+  }
+
+  /* TABS */
+  .tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .tab {
+    background: none;
+    border: none;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--brown-muted);
+    padding: 14px 22px;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.2s ease;
+  }
+
+  .tab:hover { color: var(--deep-brown); }
+  .tab.active { color: var(--berry); }
+
+  .tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 22px;
+    right: 22px;
+    height: 2px;
+    background: var(--berry);
+  }
+
+  /* HERO / FOUNDER CARD */
+  .hero {
+    background: var(--ivory-warm);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 44px;
+    margin-bottom: 28px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.02), 0 20px 48px -28px rgba(166, 50, 72, 0.18);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 260px;
+    height: 260px;
+    background: radial-gradient(circle, rgba(166, 50, 72, 0.15), transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+
+  .avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--berry), var(--berry-deep));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 34px;
+    color: var(--ivory);
+    flex-shrink: 0;
+    letter-spacing: 0.02em;
+    box-shadow: inset 0 2px 8px rgba(255,255,255,0.15), 0 8px 24px rgba(166, 50, 72, 0.3);
+  }
+
+  .hero-content { flex: 1; min-width: 260px; }
+
+  .hero-name {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    color: var(--deep-brown);
+    text-transform: uppercase;
+  }
+
+  .hero-role {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--berry);
+    margin-top: 10px;
+  }
+
+  .hero-tagline {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 19px;
+    font-weight: 400;
+    color: var(--brown-soft);
+    margin-top: 16px;
+    line-height: 1.4;
+    max-width: 520px;
+  }
+
+  /* BIG STATS BAR (3 columns now) */
+  .big-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 56px;
+  }
+
+  .big-stat {
+    background: var(--ivory-warm);
+    padding: 32px 24px;
+    text-align: center;
+    position: relative;
+    transition: background 0.2s ease;
+  }
+
+  .big-stat:hover { background: var(--berry-ghost); }
+
+  .big-stat.featured {
+    background: var(--berry);
+    color: var(--ivory);
+  }
+
+  .big-stat.featured:hover { background: var(--berry-deep); }
+
+  .big-stat-num {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 800;
+    font-size: 52px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--deep-brown);
+    margin-bottom: 10px;
+  }
+
+  .big-stat.featured .big-stat-num { color: var(--ivory); }
+
+  .big-stat-label {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--brown-muted);
+  }
+
+  .big-stat.featured .big-stat-label { color: var(--berry-soft); }
+
+  /* SECTION LABELS */
+  .section-label {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--berry);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 24px;
+    height: 2px;
+    background: var(--berry);
+  }
+
+  /* AGENT GRID */
+  .agent-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 16px;
+  }
+
+  .agent-card {
+    background: var(--ivory-warm);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 22px;
+    position: relative;
+    transition: all 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .agent-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--berry);
+    box-shadow: 0 14px 28px -14px rgba(166, 50, 72, 0.25);
+  }
+
+  .agent-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 22px;
+    bottom: 22px;
+    width: 3px;
+    border-radius: 0 3px 3px 0;
+    background: var(--berry);
+  }
+
+  .agent-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .agent-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background: var(--berry-ghost);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--berry);
+    flex-shrink: 0;
+    letter-spacing: 0.04em;
+  }
+
+  .agent-name {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    color: var(--deep-brown);
+    line-height: 1.25;
+    text-transform: uppercase;
+  }
+
+  .agent-desc {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.45;
+    color: var(--brown-soft);
+    flex: 1;
+  }
+
+  .agent-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 6px 10px;
+    border-radius: 6px;
+    align-self: flex-start;
+  }
+
+  .tag-ondemand { background: var(--berry-ghost); color: var(--berry); }
+  .tag-scheduled { background: var(--ivory-deep); color: var(--brown-soft); }
+  .tag-development { background: var(--line-soft); color: var(--brown-soft); }
+  .tag-live { background: #E3EFDC; color: #3D6B2F; }
+
+  .agent-tag .dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+
+  /* COLLAPSIBLE BLOCKS (used for Aspen + team) */
+  .collapsible-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 44px;
+  }
+
+  .collapsible {
+    background: var(--ivory-warm);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: box-shadow 0.25s ease;
+  }
+
+  .collapsible.open {
+    box-shadow: 0 14px 32px -18px rgba(166, 50, 72, 0.18);
+  }
+
+  .collapsible-toggle {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 22px 26px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.2s ease;
+    font-family: inherit;
+  }
+
+  .collapsible-toggle:hover { background: var(--ivory-deep); }
+
+  .collapsible-toggle.featured {
+    background: var(--deep-brown);
+    color: var(--ivory);
+  }
+
+  .collapsible-toggle.featured:hover {
+    background: #1A120E;
+  }
+
+  .avatar-small {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--ivory);
+    flex-shrink: 0;
+    letter-spacing: 0.02em;
+    box-shadow: inset 0 2px 4px rgba(255,255,255,0.15);
+  }
+
+  .avatar-aspen { background: linear-gradient(135deg, var(--berry), var(--berry-deep)); }
+  .avatar-alicia { background: linear-gradient(135deg, var(--berry), var(--berry-deep)); }
+  .avatar-anna { background: linear-gradient(135deg, var(--berry-deep), #5A1825); }
+  .avatar-ankush { background: linear-gradient(135deg, var(--deep-brown), #4A352A); }
+  .avatar-maddison { background: linear-gradient(135deg, #4A352A, var(--deep-brown)); }
+
+  .collapsible-info { flex: 1; min-width: 0; }
+
+  .collapsible-name {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 19px;
+    letter-spacing: 0.02em;
+    color: var(--deep-brown);
+    text-transform: uppercase;
+  }
+
+  .collapsible-toggle.featured .collapsible-name { color: var(--ivory); }
+
+  .collapsible-role {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--brown-muted);
+    margin-top: 3px;
+    text-transform: uppercase;
+  }
+
+  .collapsible-toggle.featured .collapsible-role { color: var(--berry-soft); }
+
+  .collapsible-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+  }
+
+  .agent-count {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--berry);
+    background: var(--berry-ghost);
+    padding: 7px 12px;
+    border-radius: 100px;
+  }
+
+  .collapsible-toggle.featured .agent-count {
+    color: var(--ivory);
+    background: var(--berry);
+  }
+
+  .chevron {
+    width: 20px;
+    height: 20px;
+    color: var(--brown-muted);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .collapsible-toggle.featured .chevron {
+    color: var(--berry-soft);
+  }
+
+  .collapsible.open .chevron {
+    transform: rotate(180deg);
+    color: var(--berry);
+  }
+
+  .collapsible.open .collapsible-toggle.featured .chevron {
+    color: var(--berry-soft);
+  }
+
+  .collapsible-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    padding: 0 26px;
+  }
+
+  .collapsible.open .collapsible-body {
+    max-height: 3000px;
+    padding: 4px 26px 26px;
+  }
+
+  /* PHASE-FIRST TAB */
+  .phase-hero {
+    background: var(--deep-brown);
+    color: var(--ivory);
+    border-radius: 22px;
+    padding: 56px 48px;
+    margin-bottom: 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .phase-hero::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -15%;
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, rgba(166, 50, 72, 0.38), transparent 65%);
+    pointer-events: none;
+  }
+
+  .phase-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+  }
+
+  .phase-label {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--berry-soft);
+    margin-bottom: 20px;
+  }
+
+  .phase-title {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 800;
+    font-size: 72px;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--ivory);
+    margin-bottom: 22px;
+    text-transform: uppercase;
+  }
+
+  .phase-title em {
+    font-style: normal;
+    color: var(--berry-soft);
+  }
+
+  .phase-sub {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    line-height: 1.45;
+    color: rgba(249, 245, 242, 0.78);
+    margin-bottom: 28px;
+    font-weight: 400;
+  }
+
+  .phase-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(249, 245, 242, 0.1);
+    border: 1px solid rgba(249, 245, 242, 0.2);
+    padding: 11px 20px;
+    border-radius: 100px;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ivory);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .phase-status .pulse {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--berry-soft);
+    box-shadow: 0 0 0 4px rgba(245, 221, 226, 0.25);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(245, 221, 226, 0.25); }
+    50% { box-shadow: 0 0 0 9px rgba(245, 221, 226, 0.05); }
+  }
+
+  .timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-bottom: 56px;
+  }
+
+  .timeline-item {
+    background: var(--ivory-warm);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 22px;
+    position: relative;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 22px;
+    right: 22px;
+    height: 3px;
+    background: var(--berry);
+    border-radius: 0 0 3px 3px;
+  }
+
+  .timeline-date {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--brown-muted);
+    margin-bottom: 8px;
+  }
+
+  .timeline-title {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--deep-brown);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  .timeline-desc {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    line-height: 1.45;
+    color: var(--brown-soft);
+  }
+
+  /* CTA CARD */
+  .cta-card {
+    background: var(--berry);
+    color: var(--ivory);
+    border-radius: 22px;
+    padding: 56px 44px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 40px;
+  }
+
+  .cta-card::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    left: -15%;
+    width: 440px;
+    height: 440px;
+    background: radial-gradient(circle, rgba(38, 26, 20, 0.3), transparent 65%);
+    pointer-events: none;
+  }
+
+  .cta-card::after {
+    content: '';
+    position: absolute;
+    bottom: -40%;
+    right: -10%;
+    width: 360px;
+    height: 360px;
+    background: radial-gradient(circle, rgba(245, 221, 226, 0.2), transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-label {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--berry-soft);
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-title {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 800;
+    font-size: 56px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--ivory);
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-sub {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    color: rgba(249, 245, 242, 0.82);
+    margin-top: 18px;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* TAB CONTENT */
+  .tab-content { display: none; animation: fadeIn 0.4s ease; }
+  .tab-content.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* FOOTER */
+  footer {
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-text {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    color: var(--brown-muted);
+    font-weight: 500;
+  }
+
+  .footer-signoff {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--berry);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 720px) {
+    .big-stats { grid-template-columns: repeat(3, 1fr); }
+    .big-stat { padding: 24px 12px; }
+    .big-stat-num { font-size: 36px; }
+    .big-stat-label { font-size: 9px; letter-spacing: 0.14em; }
+  }
+
+  @media (max-width: 640px) {
+    .wrap { padding: 28px 18px 80px; }
+    .tagline-banner { padding: 32px 26px; }
+    .tagline-text { font-size: 26px; }
+    .hero { padding: 28px 22px; }
+    .hero-name { font-size: 28px; }
+    .phase-title { font-size: 44px; }
+    .phase-hero { padding: 36px 26px; }
+    .cta-title { font-size: 36px; }
+    .cta-card { padding: 40px 26px; }
+    .agent-grid { grid-template-columns: 1fr; }
+    .collapsible-toggle { padding: 18px 20px; gap: 14px; }
+    .collapsible-right { gap: 10px; }
+    .agent-count { padding: 6px 10px; font-size: 9px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="brand">Aspen Brook <em>Media</em></div>
+    <div class="meta">Est. 2026 · Newport Beach</div>
+  </header>
+
+  <section class="tagline-banner">
+    <div class="tagline-label">The Team</div>
+    <h1 class="tagline-text">
+      The world runs on a 24-hour clock. Women don't.
+      <span class="line-two">So we became the architects, and built AI to do the rest.</span>
+    </h1>
+  </section>
+
+  <nav class="tabs">
+    <button class="tab active" data-tab="org">Org Map</button>
+    <button class="tab" data-tab="phase">Phase-First</button>
+  </nav>
+
+  <!-- ORG MAP -->
+  <div class="tab-content active" id="org">
+
+    <!-- FOUNDER -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="avatar">AP</div>
+        <div class="hero-content">
+          <div class="hero-name">Aspen Potter</div>
+          <div class="hero-role">Founder · CEO</div>
+          <div class="hero-tagline">Single mom building AI for women who are done forcing it.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BIG STATS -->
+    <div class="big-stats">
+      <div class="big-stat featured">
+        <div class="big-stat-num">16</div>
+        <div class="big-stat-label">AI Employees</div>
+      </div>
+      <div class="big-stat">
+        <div class="big-stat-num">4</div>
+        <div class="big-stat-label">Humans</div>
+      </div>
+      <div class="big-stat">
+        <div class="big-stat-num">1</div>
+        <div class="big-stat-label">Founder</div>
+      </div>
+    </div>
+
+    <!-- COLLAPSIBLE STACK: Aspen + Team -->
+    <div class="section-label">Org Chart · Tap to Expand</div>
+    <div class="collapsible-stack">
+
+      <!-- ASPEN'S AGENTS (collapsible, featured dark) -->
+      <div class="collapsible">
+        <button class="collapsible-toggle featured" aria-expanded="false">
+          <div class="avatar-small avatar-aspen">AP</div>
+          <div class="collapsible-info">
+            <div class="collapsible-name">Aspen's AI Employees</div>
+            <div class="collapsible-role">Strategy · Content · Ops · Voice · Research · App</div>
+          </div>
+          <div class="collapsible-right">
+            <div class="agent-count">7 Agents</div>
+            <svg class="chevron" viewBox="0 0 20 20"><path d="M5.25 7.5L10 12.25L14.75 7.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </button>
+        <div class="collapsible-body">
+          <div class="agent-grid">
+
+            <div class="agent-card">
+              <div class="agent-header">
+                <div class="agent-icon">SC</div>
+                <div class="agent-name">Strategy Claude</div>
+              </div>
+              <div class="agent-desc">Business strategy, offer positioning, funnel mapping, and long-term scale decisions. Pulls from Master Plan and 5-Year vision.</div>
+              <span class="agent-tag tag-ondemand"><span class="dot"></span>On Demand</span>
+            </div>
+
+            <div class="agent-card">
+              <div class="agent-header">
+                <div class="agent-icon">CC</div>
+                <div class="agent-name">Content Claude</div>
+              </div>
+              <div class="agent-desc">Runs the 9-step Content SOP. Turns rough scripts into filmable videos while protecting voice. Files into all three databases.</div>
+              <span class="agent-tag tag-ondemand"><span class="dot"></span>On Demand</span>
+            </div>
+
+            <div class="agent-card">
+              <div class="agent-header">
+                <div class="agent-icon">NO</div>
+                <div class="agent-name">Notion Ops Claude</div>
+              </div>
+              <div class="agent-desc">Builds, edits, and maintains the Notion workspace. Master Plan updates, database hygiene, and page structure changes.</div>
+              <span class="agent-tag tag-ondemand"><span class="dot"></span>On Demand</span>
+            </div>
+
+            <div class="agent-card">
+              <div class="agent-header">
+                <div class="agent-icon">BV</div>
+                <div class="agent-name">Brand Voice Writer</div>
+              </div>
+              <div class="agent-desc">Emails, captions, DMs, and sales copy in Aspen's exact voice. Trained on the Voice Training Doc.</div>
+              <span class="agent-tag tag-ondemand"><span class="dot"></span>On Demand</span>
+            </div>
+
+            <div class="agent-card">
+              <div class="agent-header">
+                <div class="agent-icon">RA</div>
+                <div class="agent-name">Research Agent</div>
+              </div>
+              <div class="agent-desc">Finds, verifies, and files data points for content. Stats, cycle science, and cultural references with source checks.</div>
+              <span class="agent-tag tag-ondemand"><span class="dot"></span>On Demand</span>
+            </div>
+
+            <div class="agent-card">
+              <div class="agent-header">
+                <div class="agent-icon">PL</div>
+                <div class="agent-name">Cycle-Aware Prompt Library</div>
+              </div>
+              <div class="agent-desc">A growing library of prompts tuned to each phase. The engine behind CAIK and the Phase-First app's AI planner.</div>
+              <span class="agent-tag tag-scheduled"><span class="dot"></span>Scheduled</span>
+            </div>
+
+            <div class="agent-card">
+              <div class="agent-header">
+                <div class="agent-icon">PF</div>
+                <div class="agent-name">Phase-First App</div>
+              </div>
+              <div class="agent-desc">Cycle-aware planning app. AI weekly planner, phase engine, integration hub. Beta opens Oct 2026.</div>
+              <span class="agent-tag tag-development"><span class="dot"></span>In Development</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- ALICIA -->
+      <div class="collapsible">
+        <button class="collapsible-toggle" aria-expanded="false">
+          <div class="avatar-small avatar-alicia">A</div>
+          <div class="collapsible-info">
+            <div class="collapsible-name">Alicia</div>
+            <div class="collapsible-role">Producer · Brand Kit Design Lead</div>
+          </div>
+          <div class="collapsible-right">
+            <div class="agent-count">3 Agents</div>
+            <svg class="chevron" viewBox="0 0 20 20"><path d="M5.25 7.5L10 12.25L14.75 7.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </button>
+        <div class="collapsible-body">
+          <div class="agent-grid">
+            <div class="agent-card">
+              <div class="agent-header">
+                <div class="agent-icon">PP</div>
+                <div class="agent-name">Production Pipeline Manager</div>
+              </div>
+              <div class="agent-desc">Moves videos from Content Brain through filmed, edited, and scheduled. Flags blockers before they delay posts.</div>
+              <span class="agent-tag tag-live"><span class="dot"></span>Live</span>
+            </div>
+            <div class="agent-card">
+              <div class="agent-header">
+                <div class="agent-icon">EB</div>
+                <div class="agent-name">Editor Brief Writer</div>
+              </div>
+              <div class="agent-desc">Drafts revision notes and shot briefs for Lindsey, Diego, and Peyton. Handles Ready for Review feedback.</div>
+              <span class="agent-tag tag-live"><span class="dot"></span>Live</span>
+            </div>
+            <div class="agent-card">
+              <div class="agent-header">
+                <div class="agent-icon">BK</div>
+                <div class="agent-name">Brand Kit Designer</div>
+              </div>
+              <div class="agent-desc">Canva template designer trained on brand rules. Drives the Brand Kit product build and on-brand carousel design.</div>
+              <span class="agent-tag tag-live"><span class="dot"></span>Live</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ANNA -->
+      <div class="collapsible">
+        <button class="collapsible-toggle" aria-expanded="false">
+          <div class="avatar-small avatar-anna">A</div>
+          <div class="collapsible-info">
+            <div class="collapsible-name">Anna</div>
+            <div class="collapsible-role">VA · Brand Partnerships · Canva</div>
+          </div>
+          <div class="collapsible-right">
+            <div class="agent-count">4 Agents</div>
+            <svg class="chevron" viewBox="0 0 20 20"><path d="M5.25 7.5L10 12.25L14.75 7.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </button>
+        <div class="collapsible-body">
+          <div class="agent-grid">
+            <div class="agent-card">
+              <div class="agent-header">
+                <div class="agent-icon">BO</div>
+                <div class="agent-name">Brand Outreach Agent</div>
+              </div>
+              <div class="agent-desc">Drafts first-touch pitches and follow-ups for the brand partnerships pipeline. Logs every touchpoint in the tracker.</div>
+              <span class="agent-tag tag-live"><span class="dot"></span>Live</span>
+            </div>
+            <div class="agent-card">
+              <div class="agent-header">
+                <div class="agent-icon">CR</div>
+                <div class="agent-name">Content Repurposer</div>
+              </div>
+              <div class="agent-desc">Turns long-form episodes into carousels, threads, and email snippets without losing Aspen's voice.</div>
+              <span class="agent-tag tag-live"><span class="dot"></span>Live</span>
+            </div>
+            <div class="agent-card">
+              <div class="agent-header">
+                <div class="agent-icon">CD</div>
+                <div class="agent-name">Caption + DM Writer</div>
+              </div>
+              <div class="agent-desc">Writes captions, DMs, and comment replies that match the series, CTA, and voice rules for every post.</div>
+              <span class="agent-tag tag-live"><span class="dot"></span>Live</span>
+            </div>
+            <div class="agent-card">
+              <div class="agent-header">
+                <div class="agent-icon">YD</div>
+                <div class="agent-name">YouTube Description Writer</div>
+              </div>
+              <div class="agent-desc">SEO-aware descriptions for every long-form upload. Pulls timestamps, keywords, and links automatically.</div>
+              <span class="agent-tag tag-live"><span class="dot"></span>Live</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ANKUSH -->
+      <div class="collapsible">
+        <button class="collapsible-toggle" aria-expanded="false">
+          <div class="avatar-small avatar-ankush">A</div>
+          <div class="collapsible-info">
+            <div class="collapsible-name">Ankush</div>
+            <div class="collapsible-role">Funnel Engineer · ManyChat · Kit · GHL</div>
+          </div>
+          <div class="collapsible-right">
+            <div class="agent-count">2 Agents</div>
+            <svg class="chevron" viewBox="0 0 20 20"><path d="M5.25 7.5L10 12.25L14.75 7.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </button>
+        <div class="collapsible-body">
+          <div class="agent-grid">
+            <div class="agent-card">
+              <div class="agent-header">
+                <div class="agent-icon">FB</div>
+                <div class="agent-name">Flow Builder</div>
+              </div>
+              <div class="agent-desc">Drafts ManyChat keyword flows and Kit email sequences from a brief. Ankush approves before push to live.</div>
+              <span class="agent-tag tag-ondemand"><span class="dot"></span>On Demand</span>
+            </div>
+            <div class="agent-card">
+              <div class="agent-header">
+                <div class="agent-icon">AR</div>
+                <div class="agent-name">Analytics Reader</div>
+              </div>
+              <div class="agent-desc">Pulls conversion rates, keyword volume, and sequence health from GHL and Kit into weekly digests for Aspen.</div>
+              <span class="agent-tag tag-scheduled"><span class="dot"></span>Scheduled</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MADDISON (non-expandable) -->
+      <div class="collapsible">
+        <div class="collapsible-toggle" style="cursor: default;">
+          <div class="avatar-small avatar-maddison">M</div>
+          <div class="collapsible-info">
+            <div class="collapsible-name">Maddison Koper</div>
+            <div class="collapsible-role">Trademark Attorney · Sunshine Law · External</div>
+          </div>
+          <div class="collapsible-right">
+            <div class="agent-count">On Retainer</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA CARD -->
+    <section class="cta-card">
+      <div class="cta-label">Coming Soon</div>
+      <h2 class="cta-title">Build your AI team.</h2>
+      <p class="cta-sub">A done-with-you system to put your business on AI rails. So you can build without forcing it.</p>
+    </section>
+
+  </div>
+
+  <!-- PHASE-FIRST TAB -->
+  <div class="tab-content" id="phase">
+
+    <section class="phase-hero">
+      <div class="phase-hero-content">
+        <div class="phase-label">Currently Building</div>
+        <h1 class="phase-title">Phase<em>-</em>First</h1>
+        <p class="phase-sub">The world runs on a 24-hour clock. Women don't. Phase-First is the first AI planning app that actually adapts to that.</p>
+        <div class="phase-status">
+          <span class="pulse"></span>
+          Phase 1 Build · Beta Oct 2026
+        </div>
+      </div>
+    </section>
+
+    <div class="section-label">V1 Features</div>
+    <div class="agent-grid" style="margin-bottom: 56px;">
+
+      <div class="agent-card">
+        <div class="agent-header">
+          <div class="agent-icon">CP</div>
+          <div class="agent-name">Cycle Tracking + Phase Engine</div>
+        </div>
+        <div class="agent-desc">The backbone. Four phases, auto-detected, surfaced everywhere in the app.</div>
+        <span class="agent-tag tag-development"><span class="dot"></span>In Development</span>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-header">
+          <div class="agent-icon">WP</div>
+          <div class="agent-name">AI Weekly Planner</div>
+        </div>
+        <div class="agent-desc">Plans her week around her phase, not against it. Powered by the Cycle-Aware Prompt Library.</div>
+        <span class="agent-tag tag-development"><span class="dot"></span>In Development</span>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-header">
+          <div class="agent-icon">IH</div>
+          <div class="agent-name">Integration Hub</div>
+        </div>
+        <div class="agent-desc">Read-only Google Calendar OAuth. Pulls her existing schedule into the phase view.</div>
+        <span class="agent-tag tag-development"><span class="dot"></span>In Development</span>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-header">
+          <div class="agent-icon">BD</div>
+          <div class="agent-name">Brain Dump · Triage</div>
+        </div>
+        <div class="agent-desc">She dumps everything. The app sorts it into her phase-aware plan.</div>
+        <span class="agent-tag tag-development"><span class="dot"></span>In Development</span>
+      </div>
+
+    </div>
+
+    <div class="section-label">Roadmap</div>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-date">Apr 20 — May 14</div>
+        <div class="timeline-title">Phase 1 · Solo Build</div>
+        <div class="timeline-desc">UI, phase content, and prompt engineering in Lovable.</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">May 15+</div>
+        <div class="timeline-title">Phase 2 · Architect Hire</div>
+        <div class="timeline-desc">OAuth, Supabase schema, Claude API wiring, privacy architecture.</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Aug 25 — Sep 5</div>
+        <div class="timeline-title">Private Alpha</div>
+        <div class="timeline-desc">Invite-only. 70 warm, 30 cold. Feedback cycle before beta.</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Oct 6, 2026</div>
+        <div class="timeline-title">Beta Launch</div>
+        <div class="timeline-desc">100 founding members. $79 lifetime. Stripe on web, no App Store tax.</div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-text">Aspen Brook Media builds AI-powered systems women own forever.</div>
+    <div class="footer-signoff">Now go be iconic.</div>
+  </footer>
+
+</div>
+
+<script>
+  const tabs = document.querySelectorAll('.tab');
+  const contents = document.querySelectorAll('.tab-content');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      contents.forEach(c => c.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(tab.dataset.tab).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+
+  const toggles = document.querySelectorAll('.collapsible-toggle');
+  toggles.forEach(toggle => {
+    const block = toggle.closest('.collapsible');
+    const body = block.querySelector('.collapsible-body');
+    if (!body) return;
+    toggle.addEventListener('click', () => {
+      const isOpen = block.classList.contains('open');
+      block.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', !isOpen);
+    });
+  });
+</script>
+</body>
+</html>
