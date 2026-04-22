@@ -52,7 +52,7 @@
   .wrap {
     position: relative;
     z-index: 1;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 40px 32px 100px;
   }
@@ -239,7 +239,7 @@
   .tree-level {
     display: flex;
     justify-content: center;
-    gap: 24px;
+    gap: 40px;
     position: relative;
     flex-wrap: nowrap;
   }
@@ -256,7 +256,7 @@
   .has-children::after {
     content: '';
     width: 2px;
-    height: 32px;
+    height: 48px;
     background: var(--connector);
     display: block;
     margin-top: 0;
@@ -265,9 +265,9 @@
   /* Horizontal bar connecting children to parent */
   .children-row {
     display: flex;
-    gap: 24px;
+    gap: 40px;
     position: relative;
-    padding-top: 32px;
+    padding-top: 48px;
     justify-content: center;
   }
 
@@ -277,7 +277,7 @@
     top: 0;
     left: 50%;
     width: 2px;
-    height: 16px;
+    height: 24px;
     background: var(--connector);
     transform: translateX(-50%);
   }
@@ -286,7 +286,7 @@
   .children-row.multi::after {
     content: '';
     position: absolute;
-    top: 16px;
+    top: 24px;
     left: var(--bar-start, 10%);
     right: var(--bar-end, 10%);
     height: 2px;
@@ -301,17 +301,17 @@
   .children-row > .node-wrap::before {
     content: '';
     position: absolute;
-    top: -16px;
+    top: -24px;
     left: 50%;
     width: 2px;
-    height: 16px;
+    height: 24px;
     background: var(--connector);
     transform: translateX(-50%);
   }
 
   /* For single-child rows, only vertical line needed */
   .children-row.single::before {
-    height: 32px;
+    height: 48px;
   }
 
   .children-row.single > .node-wrap::before {
@@ -323,8 +323,8 @@
     background: var(--ivory-warm);
     border: 1px solid var(--line);
     border-radius: 14px;
-    padding: 16px 18px;
-    width: 260px;
+    padding: 20px 22px;
+    width: 320px;
     transition: all 0.25s ease;
     position: relative;
     box-shadow: 0 1px 0 rgba(0,0,0,0.02);
@@ -358,15 +358,15 @@
   }
 
   .avatar {
-    width: 44px;
-    height: 44px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: 'League Spartan', sans-serif;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 18px;
     color: var(--ivory);
     flex-shrink: 0;
     letter-spacing: 0.02em;
@@ -389,7 +389,7 @@
   .card-name {
     font-family: 'League Spartan', sans-serif;
     font-weight: 700;
-    font-size: 15px;
+    font-size: 17px;
     letter-spacing: 0.02em;
     color: var(--deep-brown);
     line-height: 1.15;
@@ -981,78 +981,6 @@
     .card { width: 240px; }
     .children-row { gap: 16px; }
   }
-
-  /* TREE ZOOM CONTROLS */
-  .tree-zoom-inner {
-    transform-origin: top center;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    display: inline-block;
-    min-width: 100%;
-  }
-
-  .zoom-controls {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    z-index: 100;
-    display: flex;
-    flex-direction: column;
-    background: var(--ivory-warm);
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 10px 28px -10px rgba(38, 26, 20, 0.25);
-  }
-
-  .zoom-btn {
-    width: 44px;
-    height: 44px;
-    background: none;
-    border: none;
-    color: var(--deep-brown);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'League Spartan', sans-serif;
-    font-weight: 700;
-    font-size: 16px;
-    transition: background 0.15s ease, color 0.15s ease;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .zoom-btn:last-child { border-bottom: none; }
-  .zoom-btn:hover { background: var(--berry-ghost); color: var(--berry); }
-  .zoom-btn:active { background: var(--berry); color: var(--ivory); }
-
-  .zoom-btn svg {
-    width: 18px;
-    height: 18px;
-    stroke: currentColor;
-    fill: none;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-
-  .zoom-level {
-    width: 44px;
-    padding: 6px 0;
-    text-align: center;
-    font-family: 'League Spartan', sans-serif;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    color: var(--brown-muted);
-    background: var(--ivory-deep);
-    border-bottom: 1px solid var(--line);
-  }
-
-  @media (max-width: 640px) {
-    .zoom-controls { bottom: 16px; right: 16px; }
-    .zoom-btn { width: 40px; height: 40px; }
-    .zoom-level { width: 40px; }
-  }
 </style>
 </head>
 <body>
@@ -1086,7 +1014,6 @@
 
     <!-- TREE -->
     <div class="tree-wrap">
-      <div class="tree-zoom-inner" id="tree-zoom-inner">
       <div class="tree">
 
         <!-- LEVEL 1: ASPEN -->
@@ -1362,7 +1289,6 @@
         </div>
 
       </div>
-      </div>
     </div>
 
     <!-- EXTERNAL SECTION -->
@@ -1484,20 +1410,6 @@
 
 </div>
 
-<!-- ZOOM CONTROLS -->
-<div class="zoom-controls" aria-label="Zoom controls">
-  <button class="zoom-btn" id="zoom-in" aria-label="Zoom in" title="Zoom in">
-    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
-  </button>
-  <div class="zoom-level" id="zoom-level">100%</div>
-  <button class="zoom-btn" id="zoom-out" aria-label="Zoom out" title="Zoom out">
-    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="8" y1="11" x2="14" y2="11"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
-  </button>
-  <button class="zoom-btn" id="zoom-reset" aria-label="Reset zoom" title="Reset to 100%">
-    <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7"/><polyline points="3 3 3 9 9 9"/></svg>
-  </button>
-</div>
-
 <script>
   // Tab switching
   const tabs = document.querySelectorAll('.tab');
@@ -1535,57 +1447,6 @@
       card.classList.toggle('expanded');
       agentsPill.classList.toggle('active');
     });
-  });
-
-  // ZOOM CONTROLS - scale the tree inner container
-  const zoomLevels = [0.4, 0.5, 0.6, 0.75, 0.9, 1.0, 1.15, 1.35, 1.6, 2.0];
-  let zoomIndex = 5; // start at 100%
-  const treeInner = document.getElementById('tree-zoom-inner');
-  const zoomInBtn = document.getElementById('zoom-in');
-  const zoomOutBtn = document.getElementById('zoom-out');
-  const zoomResetBtn = document.getElementById('zoom-reset');
-  const zoomLabel = document.getElementById('zoom-level');
-
-  function applyZoom() {
-    const z = zoomLevels[zoomIndex];
-    if (treeInner) {
-      treeInner.style.transform = 'scale(' + z + ')';
-    }
-    zoomLabel.textContent = Math.round(z * 100) + '%';
-  }
-
-  zoomInBtn.addEventListener('click', () => {
-    if (zoomIndex < zoomLevels.length - 1) {
-      zoomIndex++;
-      applyZoom();
-    }
-  });
-
-  zoomOutBtn.addEventListener('click', () => {
-    if (zoomIndex > 0) {
-      zoomIndex--;
-      applyZoom();
-    }
-  });
-
-  zoomResetBtn.addEventListener('click', () => {
-    zoomIndex = 5;
-    applyZoom();
-  });
-
-  // Keyboard shortcuts: Cmd/Ctrl + / - / 0
-  document.addEventListener('keydown', (e) => {
-    if (!(e.metaKey || e.ctrlKey)) return;
-    if (e.key === '=' || e.key === '+') {
-      e.preventDefault();
-      zoomInBtn.click();
-    } else if (e.key === '-') {
-      e.preventDefault();
-      zoomOutBtn.click();
-    } else if (e.key === '0') {
-      e.preventDefault();
-      zoomResetBtn.click();
-    }
   });
 </script>
 </body>
