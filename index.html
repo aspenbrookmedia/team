@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes">
 <title>Aspen Brook Media — The Team</title>
-<meta property="og:title" content="Aspen Brook Media · 16 AI Employees">
+<meta property="og:title" content="Aspen Brook Media · 21 AI Employees">
 <meta property="og:description" content="The world runs on a 24-hour clock. Women don't. So we became the architects, and built AI to do the rest.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,14 +15,15 @@
     --berry-deep: #7A2435;
     --berry-soft: #F5DDE2;
     --berry-ghost: #FBEFF1;
-    --ivory: #F9F5F2;
-    --ivory-warm: #FDFAF6;
-    --ivory-deep: #F2ECE4;
+    --ivory: #FBFAF7;
+    --ivory-warm: #FFFFFF;
+    --ivory-deep: #F4F1EB;
     --deep-brown: #261A14;
     --brown-soft: #6B564A;
     --brown-muted: #9B8577;
-    --line: #E8DED0;
-    --line-soft: #EFE7DB;
+    --line: #EAE2D4;
+    --line-soft: #F0E9DC;
+    --connector: #D4C7B3;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -34,7 +35,6 @@
     font-weight: 400;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
   }
 
   body::before {
@@ -52,12 +52,11 @@
   .wrap {
     position: relative;
     z-index: 1;
-    max-width: 1180px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 40px 32px 100px;
   }
 
-  /* HEADER */
   header {
     display: flex;
     align-items: baseline;
@@ -93,12 +92,11 @@
     color: var(--brown-muted);
   }
 
-  /* TAGLINE BANNER */
   .tagline-banner {
     background: var(--deep-brown);
     color: var(--ivory);
     border-radius: 20px;
-    padding: 48px 48px;
+    padding: 48px;
     margin-bottom: 48px;
     position: relative;
     overflow: hidden;
@@ -156,7 +154,6 @@
     margin-top: 4px;
   }
 
-  /* TABS */
   .tabs {
     display: flex;
     gap: 4px;
@@ -192,318 +189,184 @@
     background: var(--berry);
   }
 
-  /* HERO / FOUNDER CARD */
-  .hero {
-    background: var(--ivory-warm);
-    border: 1px solid var(--line);
-    border-radius: 20px;
-    padding: 44px;
-    margin-bottom: 28px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 1px 0 rgba(0,0,0,0.02), 0 20px 48px -28px rgba(166, 50, 72, 0.18);
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -80px;
-    right: -80px;
-    width: 260px;
-    height: 260px;
-    background: radial-gradient(circle, rgba(166, 50, 72, 0.15), transparent 70%);
-    pointer-events: none;
-  }
-
-  .hero-inner {
-    display: flex;
-    align-items: flex-start;
-    gap: 28px;
-    flex-wrap: wrap;
-    position: relative;
-    z-index: 1;
-  }
-
-  .avatar {
-    width: 96px;
-    height: 96px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--berry), var(--berry-deep));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'League Spartan', sans-serif;
-    font-weight: 700;
-    font-size: 34px;
-    color: var(--ivory);
-    flex-shrink: 0;
-    letter-spacing: 0.02em;
-    box-shadow: inset 0 2px 8px rgba(255,255,255,0.15), 0 8px 24px rgba(166, 50, 72, 0.3);
-  }
-
-  .hero-content { flex: 1; min-width: 260px; }
-
-  .hero-name {
-    font-family: 'League Spartan', sans-serif;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 1;
-    letter-spacing: -0.01em;
-    color: var(--deep-brown);
-    text-transform: uppercase;
-  }
-
-  .hero-role {
-    font-family: 'League Spartan', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
-    color: var(--berry);
-    margin-top: 10px;
-  }
-
-  .hero-tagline {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 19px;
-    font-weight: 400;
-    color: var(--brown-soft);
-    margin-top: 16px;
-    line-height: 1.4;
-    max-width: 520px;
-  }
-
-  /* BIG STATS BAR (3 columns now) */
-  .big-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--line);
-    border: 1px solid var(--line);
-    border-radius: 20px;
-    overflow: hidden;
-    margin-bottom: 56px;
-  }
-
-  .big-stat {
-    background: var(--ivory-warm);
-    padding: 32px 24px;
+  /* INTRO QUOTE */
+  .intro-quote {
     text-align: center;
-    position: relative;
-    transition: background 0.2s ease;
+    padding: 0 20px 40px;
+    max-width: 760px;
+    margin: 0 auto;
   }
 
-  .big-stat:hover { background: var(--berry-ghost); }
-
-  .big-stat.featured {
-    background: var(--berry);
-    color: var(--ivory);
+  .intro-quote p {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-style: italic;
+    color: var(--brown-soft);
+    line-height: 1.5;
   }
 
-  .big-stat.featured:hover { background: var(--berry-deep); }
-
-  .big-stat-num {
-    font-family: 'League Spartan', sans-serif;
-    font-weight: 800;
-    font-size: 52px;
-    line-height: 1;
-    letter-spacing: -0.02em;
-    color: var(--deep-brown);
-    margin-bottom: 10px;
-  }
-
-  .big-stat.featured .big-stat-num { color: var(--ivory); }
-
-  .big-stat-label {
-    font-family: 'League Spartan', sans-serif;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--brown-muted);
-  }
-
-  .big-stat.featured .big-stat-label { color: var(--berry-soft); }
-
-  /* SECTION LABELS */
-  .section-label {
+  .intro-quote .hint {
     font-family: 'League Spartan', sans-serif;
     font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.28em;
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
+    color: var(--brown-muted);
+    margin-top: 16px;
+    display: block;
+  }
+
+  .intro-quote .hint strong {
     color: var(--berry);
-    margin-bottom: 20px;
+  }
+
+  /* ORG TREE */
+  .tree-wrap {
+    padding: 20px 0 60px;
+    overflow: visible;
+  }
+
+  .tree {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 14px;
+    min-width: fit-content;
+    padding: 0 20px;
   }
 
-  .section-label::before {
+  /* TREE LEVEL */
+  .tree-level {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    position: relative;
+    flex-wrap: nowrap;
+  }
+
+  /* CONNECTORS (using pseudo-elements on wrappers) */
+  .node-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  /* Vertical line DOWN from parent */
+  .has-children::after {
     content: '';
-    width: 24px;
+    width: 2px;
+    height: 32px;
+    background: var(--connector);
+    display: block;
+    margin-top: 0;
+  }
+
+  /* Horizontal bar connecting children to parent */
+  .children-row {
+    display: flex;
+    gap: 24px;
+    position: relative;
+    padding-top: 32px;
+    justify-content: center;
+  }
+
+  .children-row::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 16px;
+    background: var(--connector);
+    transform: translateX(-50%);
+  }
+
+  /* Horizontal line across siblings */
+  .children-row.multi::after {
+    content: '';
+    position: absolute;
+    top: 16px;
+    left: var(--bar-start, 10%);
+    right: var(--bar-end, 10%);
     height: 2px;
-    background: var(--berry);
+    background: var(--connector);
   }
 
-  /* AGENT GRID */
-  .agent-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-    gap: 16px;
+  /* Vertical line UP to each child */
+  .children-row > .node-wrap {
+    position: relative;
   }
 
-  .agent-card {
+  .children-row > .node-wrap::before {
+    content: '';
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    width: 2px;
+    height: 16px;
+    background: var(--connector);
+    transform: translateX(-50%);
+  }
+
+  /* For single-child rows, only vertical line needed */
+  .children-row.single::before {
+    height: 32px;
+  }
+
+  .children-row.single > .node-wrap::before {
+    display: none;
+  }
+
+  /* CARDS */
+  .card {
     background: var(--ivory-warm);
     border: 1px solid var(--line);
     border-radius: 14px;
-    padding: 22px;
-    position: relative;
+    padding: 16px 18px;
+    width: 260px;
     transition: all 0.25s ease;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    position: relative;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.02);
   }
 
-  .agent-card:hover {
-    transform: translateY(-3px);
+  .card:hover {
     border-color: var(--berry);
-    box-shadow: 0 14px 28px -14px rgba(166, 50, 72, 0.25);
+    box-shadow: 0 10px 24px -12px rgba(166, 50, 72, 0.2);
+    transform: translateY(-2px);
   }
 
-  .agent-card::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 22px;
-    bottom: 22px;
-    width: 3px;
-    border-radius: 0 3px 3px 0;
-    background: var(--berry);
-  }
-
-  .agent-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .agent-icon {
-    width: 34px;
-    height: 34px;
-    border-radius: 8px;
-    background: var(--berry-ghost);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'League Spartan', sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    color: var(--berry);
-    flex-shrink: 0;
-    letter-spacing: 0.04em;
-  }
-
-  .agent-name {
-    font-family: 'League Spartan', sans-serif;
-    font-weight: 600;
-    font-size: 15px;
-    letter-spacing: 0.02em;
-    color: var(--deep-brown);
-    line-height: 1.25;
-    text-transform: uppercase;
-  }
-
-  .agent-desc {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 1.45;
-    color: var(--brown-soft);
-    flex: 1;
-  }
-
-  .agent-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-family: 'League Spartan', sans-serif;
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    padding: 6px 10px;
-    border-radius: 6px;
-    align-self: flex-start;
-  }
-
-  .tag-ondemand { background: var(--berry-ghost); color: var(--berry); }
-  .tag-scheduled { background: var(--ivory-deep); color: var(--brown-soft); }
-  .tag-development { background: var(--line-soft); color: var(--brown-soft); }
-  .tag-live { background: #E3EFDC; color: #3D6B2F; }
-
-  .agent-tag .dot {
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: currentColor;
-  }
-
-  /* COLLAPSIBLE BLOCKS (used for Aspen + team) */
-  .collapsible-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 44px;
-  }
-
-  .collapsible {
-    background: var(--ivory-warm);
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    overflow: hidden;
-    transition: box-shadow 0.25s ease;
-  }
-
-  .collapsible.open {
-    box-shadow: 0 14px 32px -18px rgba(166, 50, 72, 0.18);
-  }
-
-  .collapsible-toggle {
-    width: 100%;
-    background: none;
-    border: none;
-    padding: 22px 26px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    cursor: pointer;
-    text-align: left;
-    transition: background 0.2s ease;
-    font-family: inherit;
-  }
-
-  .collapsible-toggle:hover { background: var(--ivory-deep); }
-
-  .collapsible-toggle.featured {
+  .card.featured {
     background: var(--deep-brown);
-    color: var(--ivory);
+    border-color: var(--deep-brown);
   }
 
-  .collapsible-toggle.featured:hover {
-    background: #1A120E;
+  .card.featured:hover {
+    box-shadow: 0 14px 32px -14px rgba(38, 26, 20, 0.4);
   }
 
-  .avatar-small {
-    width: 52px;
-    height: 52px;
+  .card.external {
+    border-style: dashed;
+    background: var(--ivory-deep);
+  }
+
+  .card-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .avatar {
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: 'League Spartan', sans-serif;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 16px;
     color: var(--ivory);
     flex-shrink: 0;
     letter-spacing: 0.02em;
@@ -516,86 +379,224 @@
   .avatar-ankush { background: linear-gradient(135deg, var(--deep-brown), #4A352A); }
   .avatar-maddison { background: linear-gradient(135deg, #4A352A, var(--deep-brown)); }
 
-  .collapsible-info { flex: 1; min-width: 0; }
+  .card.featured .avatar-aspen {
+    background: linear-gradient(135deg, var(--berry-soft), var(--ivory));
+    color: var(--berry-deep);
+  }
 
-  .collapsible-name {
+  .card-info { flex: 1; min-width: 0; }
+
+  .card-name {
     font-family: 'League Spartan', sans-serif;
     font-weight: 700;
-    font-size: 19px;
+    font-size: 15px;
     letter-spacing: 0.02em;
     color: var(--deep-brown);
+    line-height: 1.15;
     text-transform: uppercase;
   }
 
-  .collapsible-toggle.featured .collapsible-name { color: var(--ivory); }
+  .card.featured .card-name { color: var(--ivory); }
 
-  .collapsible-role {
+  .card-role {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.03em;
     color: var(--brown-muted);
-    margin-top: 3px;
+    margin-top: 2px;
     text-transform: uppercase;
+    line-height: 1.25;
   }
 
-  .collapsible-toggle.featured .collapsible-role { color: var(--berry-soft); }
+  .card.featured .card-role { color: var(--berry-soft); }
 
-  .collapsible-right {
+  .pills {
     display: flex;
-    align-items: center;
-    gap: 14px;
-    flex-shrink: 0;
+    gap: 6px;
+    flex-wrap: wrap;
   }
 
-  .agent-count {
+  .pill {
+    background: none;
+    border: 1px solid var(--line);
+    padding: 6px 10px;
+    border-radius: 100px;
     font-family: 'League Spartan', sans-serif;
     font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.16em;
+    font-weight: 600;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--berry);
-    background: var(--berry-ghost);
-    padding: 7px 12px;
-    border-radius: 100px;
+    color: var(--brown-soft);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.15s ease;
   }
 
-  .collapsible-toggle.featured .agent-count {
+  .pill:hover {
+    background: var(--berry-ghost);
+    color: var(--berry);
+    border-color: var(--berry);
+  }
+
+  .pill.active {
+    background: var(--berry);
     color: var(--ivory);
+    border-color: var(--berry);
+  }
+
+  .card.featured .pill {
+    border-color: rgba(245, 221, 226, 0.25);
+    color: var(--berry-soft);
+    background: rgba(245, 221, 226, 0.08);
+  }
+
+  .card.featured .pill:hover,
+  .card.featured .pill.active {
+    background: var(--berry-soft);
+    color: var(--berry-deep);
+    border-color: var(--berry-soft);
+  }
+
+  .pill .dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
     background: var(--berry);
   }
 
-  .chevron {
-    width: 20px;
-    height: 20px;
-    color: var(--brown-muted);
-    transition: transform 0.3s ease;
-    flex-shrink: 0;
+  .card.featured .pill .dot { background: var(--berry-soft); }
+  .pill.active .dot,
+  .card.featured .pill.active .dot { background: currentColor; opacity: 0.9; }
+
+  .pill .chevron {
+    width: 10px;
+    height: 10px;
+    transition: transform 0.2s ease;
   }
 
-  .collapsible-toggle.featured .chevron {
-    color: var(--berry-soft);
-  }
-
-  .collapsible.open .chevron {
+  .pill.active .chevron {
     transform: rotate(180deg);
-    color: var(--berry);
   }
 
-  .collapsible.open .collapsible-toggle.featured .chevron {
-    color: var(--berry-soft);
-  }
-
-  .collapsible-body {
+  /* AGENT LIST (expands inline) */
+  .agent-list {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease, padding 0.5s ease;
-    padding: 0 26px;
+    transition: max-height 0.4s ease, margin-top 0.4s ease, padding 0.4s ease;
+    margin-top: 0;
+    border-top: 1px solid transparent;
   }
 
-  .collapsible.open .collapsible-body {
-    max-height: 3000px;
-    padding: 4px 26px 26px;
+  .card.expanded .agent-list {
+    max-height: 2000px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top-color: var(--line);
+  }
+
+  .card.featured.expanded .agent-list {
+    border-top-color: rgba(245, 221, 226, 0.2);
+  }
+
+  .agent-list-label {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--brown-muted);
+    margin-bottom: 10px;
+  }
+
+  .card.featured .agent-list-label { color: var(--berry-soft); }
+
+  .agent-row {
+    display: flex;
+    gap: 10px;
+    padding: 10px 0;
+    border-left: 2px solid var(--berry);
+    padding-left: 12px;
+    margin-bottom: 8px;
+  }
+
+  .agent-row:last-child { margin-bottom: 0; }
+
+  .card.featured .agent-row {
+    border-left-color: var(--berry-soft);
+  }
+
+  .agent-icon {
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    background: var(--berry-ghost);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    color: var(--berry);
+    flex-shrink: 0;
+    letter-spacing: 0.04em;
+  }
+
+  .card.featured .agent-icon {
+    background: rgba(245, 221, 226, 0.15);
+    color: var(--berry-soft);
+  }
+
+  .agent-content { flex: 1; min-width: 0; }
+
+  .agent-name {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--deep-brown);
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+
+  .card.featured .agent-name { color: var(--ivory); }
+
+  .agent-desc {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.35;
+    color: var(--brown-soft);
+  }
+
+  .card.featured .agent-desc { color: rgba(245, 221, 226, 0.75); }
+
+  /* EXTERNAL SECTION */
+  .external-section {
+    margin-top: 80px;
+    padding-top: 32px;
+    border-top: 1px dashed var(--line);
+    text-align: center;
+  }
+
+  .external-label {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--brown-muted);
+    margin-bottom: 16px;
+  }
+
+  .external-cards {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   /* PHASE-FIRST TAB */
@@ -691,6 +692,117 @@
     50% { box-shadow: 0 0 0 9px rgba(245, 221, 226, 0.05); }
   }
 
+  .section-label {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--berry);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 24px;
+    height: 2px;
+    background: var(--berry);
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 16px;
+    margin-bottom: 52px;
+  }
+
+  .feature-card {
+    background: var(--ivory-warm);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+  }
+
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 22px;
+    bottom: 22px;
+    width: 3px;
+    border-radius: 0 3px 3px 0;
+    background: var(--berry);
+  }
+
+  .feature-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .feature-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background: var(--berry-ghost);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--berry);
+    flex-shrink: 0;
+  }
+
+  .feature-name {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    color: var(--deep-brown);
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .feature-desc {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    line-height: 1.45;
+    color: var(--brown-soft);
+    flex: 1;
+  }
+
+  .feature-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 6px 10px;
+    border-radius: 6px;
+    align-self: flex-start;
+    background: var(--line-soft);
+    color: var(--brown-soft);
+  }
+
+  .feature-tag .dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+
   .timeline {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -744,7 +856,6 @@
     color: var(--brown-soft);
   }
 
-  /* CTA CARD */
   .cta-card {
     background: var(--berry);
     color: var(--ivory);
@@ -754,6 +865,7 @@
     position: relative;
     overflow: hidden;
     margin-bottom: 40px;
+    margin-top: 60px;
   }
 
   .cta-card::before {
@@ -815,7 +927,6 @@
     z-index: 1;
   }
 
-  /* TAB CONTENT */
   .tab-content { display: none; animation: fadeIn 0.4s ease; }
   .tab-content.active { display: block; }
 
@@ -824,7 +935,6 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* FOOTER */
   footer {
     padding-top: 32px;
     border-top: 1px solid var(--line);
@@ -851,108 +961,25 @@
     text-transform: uppercase;
   }
 
-  @media (max-width: 720px) {
-    .big-stats { grid-template-columns: repeat(3, 1fr); }
-    .big-stat { padding: 24px 12px; }
-    .big-stat-num { font-size: 36px; }
-    .big-stat-label { font-size: 9px; letter-spacing: 0.14em; }
+  @media (max-width: 900px) {
+    .tree-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .intro-quote p { font-size: 16px; }
   }
 
   @media (max-width: 640px) {
     .wrap { padding: 28px 18px 80px; }
     .tagline-banner { padding: 32px 26px; }
     .tagline-text { font-size: 26px; }
-    .hero { padding: 28px 22px; }
-    .hero-name { font-size: 28px; }
     .phase-title { font-size: 44px; }
     .phase-hero { padding: 36px 26px; }
     .cta-title { font-size: 36px; }
     .cta-card { padding: 40px 26px; }
-    .agent-grid { grid-template-columns: 1fr; }
-    .collapsible-toggle { padding: 18px 20px; gap: 14px; }
-    .collapsible-right { gap: 10px; }
-    .agent-count { padding: 6px 10px; font-size: 9px; }
-  }
-
-  /* ZOOM CONTROL */
-  .zoom-wrap {
-    position: relative;
-    transform-origin: 0 0;
-    transition: transform 0.25s ease;
-  }
-
-  .zoom-wrap.zoomed {
-    cursor: grab;
-  }
-
-  .zoom-wrap.grabbing {
-    cursor: grabbing;
-    transition: none;
-  }
-
-  .zoom-controls {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    z-index: 100;
-    display: flex;
-    flex-direction: column;
-    background: var(--ivory-warm);
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 8px 24px -8px rgba(38, 26, 20, 0.25);
-    backdrop-filter: blur(10px);
-  }
-
-  .zoom-btn {
-    width: 44px;
-    height: 44px;
-    background: none;
-    border: none;
-    color: var(--deep-brown);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'League Spartan', sans-serif;
-    font-weight: 700;
-    font-size: 18px;
-    transition: background 0.15s ease, color 0.15s ease;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .zoom-btn:last-child { border-bottom: none; }
-  .zoom-btn:hover { background: var(--berry-ghost); color: var(--berry); }
-  .zoom-btn:active { background: var(--berry); color: var(--ivory); }
-
-  .zoom-btn svg {
-    width: 18px;
-    height: 18px;
-    stroke: currentColor;
-    fill: none;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-
-  .zoom-level {
-    width: 44px;
-    padding: 6px 0;
-    text-align: center;
-    font-family: 'League Spartan', sans-serif;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    color: var(--brown-muted);
-    background: var(--ivory-deep);
-    border-bottom: 1px solid var(--line);
-  }
-
-  @media (max-width: 640px) {
-    .zoom-controls { bottom: 16px; right: 16px; }
-    .zoom-btn { width: 40px; height: 40px; }
-    .zoom-level { width: 40px; }
+    .feature-grid { grid-template-columns: 1fr; }
+    .card { width: 240px; }
+    .children-row { gap: 16px; }
   }
 </style>
 </head>
@@ -961,7 +988,7 @@
 
   <header>
     <div class="brand">Aspen Brook <em>Media</em></div>
-    <div class="meta">Est. 2026 · Newport Beach</div>
+    <div class="meta">Est. 2026</div>
   </header>
 
   <section class="tagline-banner">
@@ -980,271 +1007,290 @@
   <!-- ORG MAP -->
   <div class="tab-content active" id="org">
 
-    <!-- FOUNDER -->
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="avatar">AP</div>
-        <div class="hero-content">
-          <div class="hero-name">Aspen Potter</div>
-          <div class="hero-role">Founder · CEO</div>
-          <div class="hero-tagline">Single mom building AI for women who are done forcing it.</div>
+    <div class="intro-quote">
+      <p>"We don't hire people to do process work. We train humans to become AI architects — then they build the AI employees that handle the rest. A team of 4, operating like a team of 25."</p>
+      <span class="hint">Tap any card to explore · Tap <strong>AI Employees</strong> to see who's doing the work</span>
+    </div>
+
+    <!-- TREE -->
+    <div class="tree-wrap">
+      <div class="tree">
+
+        <!-- LEVEL 1: ASPEN -->
+        <div class="tree-level">
+          <div class="node-wrap has-children">
+            <div class="card featured" data-person="aspen">
+              <div class="card-top">
+                <div class="avatar avatar-aspen">AP</div>
+                <div class="card-info">
+                  <div class="card-name">Aspen Potter</div>
+                  <div class="card-role">Founder · CEO</div>
+                </div>
+              </div>
+              <div class="pills">
+                <button class="pill reports-pill">3 Reports</button>
+                <button class="pill agents-pill" data-agents="aspen-agents">
+                  <span class="dot"></span>10 AI Employees
+                  <svg class="chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M2 4L5 7L8 4" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="agent-list" id="aspen-agents">
+                <div class="agent-list-label">Aspen's AI Employees</div>
+                <div class="agent-row">
+                  <div class="agent-icon">SC</div>
+                  <div class="agent-content">
+                    <div class="agent-name">Strategy Claude</div>
+                    <div class="agent-desc">Business strategy, offer positioning, funnel mapping, and long-term scale decisions.</div>
+                  </div>
+                </div>
+                <div class="agent-row">
+                  <div class="agent-icon">CC</div>
+                  <div class="agent-content">
+                    <div class="agent-name">Content Claude</div>
+                    <div class="agent-desc">Runs the 9-step Content SOP. Turns rough scripts into filmable videos while protecting voice.</div>
+                  </div>
+                </div>
+                <div class="agent-row">
+                  <div class="agent-icon">NO</div>
+                  <div class="agent-content">
+                    <div class="agent-name">Notion Ops Claude</div>
+                    <div class="agent-desc">Maintains the Notion workspace. Master Plan updates, database hygiene, page structure.</div>
+                  </div>
+                </div>
+                <div class="agent-row">
+                  <div class="agent-icon">BV</div>
+                  <div class="agent-content">
+                    <div class="agent-name">Brand Voice Writer</div>
+                    <div class="agent-desc">Emails, captions, DMs, and sales copy in Aspen's exact voice.</div>
+                  </div>
+                </div>
+                <div class="agent-row">
+                  <div class="agent-icon">RA</div>
+                  <div class="agent-content">
+                    <div class="agent-name">Research Agent</div>
+                    <div class="agent-desc">Finds, verifies, and files data points for content. Stats, science, and source checks.</div>
+                  </div>
+                </div>
+                <div class="agent-row">
+                  <div class="agent-icon">PL</div>
+                  <div class="agent-content">
+                    <div class="agent-name">Cycle-Aware Prompt Library</div>
+                    <div class="agent-desc">Prompts tuned to each phase. Engine behind CAIK and the Phase-First app planner.</div>
+                  </div>
+                </div>
+                <div class="agent-row">
+                  <div class="agent-icon">PF</div>
+                  <div class="agent-content">
+                    <div class="agent-name">Phase-First App</div>
+                    <div class="agent-desc">Cycle-aware planning app. AI weekly planner, phase engine. Beta opens Oct 2026.</div>
+                  </div>
+                </div>
+                <div class="agent-row">
+                  <div class="agent-icon">WC</div>
+                  <div class="agent-content">
+                    <div class="agent-name">Weekly Check-In Coach</div>
+                    <div class="agent-desc">Cycle-aware check-ins on food, energy, and scheduling. Knows the phase, gives advice that fits.</div>
+                  </div>
+                </div>
+                <div class="agent-row">
+                  <div class="agent-icon">QF</div>
+                  <div class="agent-content">
+                    <div class="agent-name">Quality Filter</div>
+                    <div class="agent-desc">Runs The Woman Test on every piece of content. Save, send, follow. Seven questions before ship.</div>
+                  </div>
+                </div>
+                <div class="agent-row">
+                  <div class="agent-icon">MP</div>
+                  <div class="agent-content">
+                    <div class="agent-name">Master Plan Keeper</div>
+                    <div class="agent-desc">Updates the 23-week Master Plan at the end of every session. Tracks wins, blockers, and shifts.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LEVEL 2: TEAM -->
+        <div class="children-row multi">
+
+          <!-- ALICIA -->
+          <div class="node-wrap">
+            <div class="card" data-person="alicia">
+              <div class="card-top">
+                <div class="avatar avatar-alicia">A</div>
+                <div class="card-info">
+                  <div class="card-name">Alicia</div>
+                  <div class="card-role">Producer · Brand Kit Lead</div>
+                </div>
+              </div>
+              <div class="pills">
+                <button class="pill agents-pill" data-agents="alicia-agents">
+                  <span class="dot"></span>4 AI Employees
+                  <svg class="chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M2 4L5 7L8 4" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="agent-list" id="alicia-agents">
+                <div class="agent-list-label">Alicia's AI Employees</div>
+                <div class="agent-row">
+                  <div class="agent-icon">PP</div>
+                  <div class="agent-content">
+                    <div class="agent-name">Production Pipeline Manager</div>
+                    <div class="agent-desc">Moves videos through filmed, edited, and scheduled. Flags blockers before delays.</div>
+                  </div>
+                </div>
+                <div class="agent-row">
+                  <div class="agent-icon">EB</div>
+                  <div class="agent-content">
+                    <div class="agent-name">Editor Brief Writer</div>
+                    <div class="agent-desc">Revision notes and briefs for Lindsey, Diego, Peyton. Ready for Review feedback.</div>
+                  </div>
+                </div>
+                <div class="agent-row">
+                  <div class="agent-icon">BK</div>
+                  <div class="agent-content">
+                    <div class="agent-name">Brand Kit Designer</div>
+                    <div class="agent-desc">Canva template designer trained on brand rules. Drives Brand Kit product build.</div>
+                  </div>
+                </div>
+                <div class="agent-row">
+                  <div class="agent-icon">CI</div>
+                  <div class="agent-content">
+                    <div class="agent-name">Content Idea Scout</div>
+                    <div class="agent-desc">Pitches fresh concepts pulled from the viral hook and carousel frameworks. Voice-aligned.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ANNA -->
+          <div class="node-wrap">
+            <div class="card" data-person="anna">
+              <div class="card-top">
+                <div class="avatar avatar-anna">A</div>
+                <div class="card-info">
+                  <div class="card-name">Anna</div>
+                  <div class="card-role">VA · Brand Partnerships</div>
+                </div>
+              </div>
+              <div class="pills">
+                <button class="pill agents-pill" data-agents="anna-agents">
+                  <span class="dot"></span>5 AI Employees
+                  <svg class="chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M2 4L5 7L8 4" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="agent-list" id="anna-agents">
+                <div class="agent-list-label">Anna's AI Employees</div>
+                <div class="agent-row">
+                  <div class="agent-icon">BO</div>
+                  <div class="agent-content">
+                    <div class="agent-name">Brand Outreach Agent</div>
+                    <div class="agent-desc">First-touch pitches and follow-ups for brand partnerships. Logs in the tracker.</div>
+                  </div>
+                </div>
+                <div class="agent-row">
+                  <div class="agent-icon">CR</div>
+                  <div class="agent-content">
+                    <div class="agent-name">Content Repurposer</div>
+                    <div class="agent-desc">Long-form into carousels, threads, and email snippets. Protects voice.</div>
+                  </div>
+                </div>
+                <div class="agent-row">
+                  <div class="agent-icon">CD</div>
+                  <div class="agent-content">
+                    <div class="agent-name">Caption + DM Writer</div>
+                    <div class="agent-desc">Captions, DMs, and replies matching series, CTA, and voice rules.</div>
+                  </div>
+                </div>
+                <div class="agent-row">
+                  <div class="agent-icon">YD</div>
+                  <div class="agent-content">
+                    <div class="agent-name">YouTube Description Writer</div>
+                    <div class="agent-desc">SEO descriptions for long-form. Pulls timestamps, keywords, links.</div>
+                  </div>
+                </div>
+                <div class="agent-row">
+                  <div class="agent-icon">CW</div>
+                  <div class="agent-content">
+                    <div class="agent-name">Carousel Copywriter</div>
+                    <div class="agent-desc">Writes slide-by-slide carousel copy. Voice-aligned. Hooks that make slide 1 work alone.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ANKUSH -->
+          <div class="node-wrap">
+            <div class="card" data-person="ankush">
+              <div class="card-top">
+                <div class="avatar avatar-ankush">A</div>
+                <div class="card-info">
+                  <div class="card-name">Ankush</div>
+                  <div class="card-role">Funnel Engineer</div>
+                </div>
+              </div>
+              <div class="pills">
+                <button class="pill agents-pill" data-agents="ankush-agents">
+                  <span class="dot"></span>2 AI Employees
+                  <svg class="chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M2 4L5 7L8 4" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="agent-list" id="ankush-agents">
+                <div class="agent-list-label">Ankush's AI Employees</div>
+                <div class="agent-row">
+                  <div class="agent-icon">FB</div>
+                  <div class="agent-content">
+                    <div class="agent-name">Flow Builder</div>
+                    <div class="agent-desc">Drafts ManyChat keyword flows and Kit email sequences from a brief.</div>
+                  </div>
+                </div>
+                <div class="agent-row">
+                  <div class="agent-icon">AR</div>
+                  <div class="agent-content">
+                    <div class="agent-name">Analytics Reader</div>
+                    <div class="agent-desc">Conversion rates, keyword volume, and sequence health. Weekly digests.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- EXTERNAL SECTION -->
+    <section class="external-section">
+      <div class="external-label">External · On Retainer</div>
+      <div class="external-cards">
+        <div class="card external">
+          <div class="card-top">
+            <div class="avatar avatar-maddison">M</div>
+            <div class="card-info">
+              <div class="card-name">Maddison Koper</div>
+              <div class="card-role">Trademark Attorney · Sunshine Law</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-
-    <!-- BIG STATS -->
-    <div class="big-stats">
-      <div class="big-stat featured">
-        <div class="big-stat-num">16</div>
-        <div class="big-stat-label">AI Employees</div>
-      </div>
-      <div class="big-stat">
-        <div class="big-stat-num">4</div>
-        <div class="big-stat-label">Humans</div>
-      </div>
-      <div class="big-stat">
-        <div class="big-stat-num">1</div>
-        <div class="big-stat-label">Founder</div>
-      </div>
-    </div>
-
-    <!-- COLLAPSIBLE STACK: Aspen + Team -->
-    <div class="section-label">Org Chart · Tap to Expand</div>
-    <div class="collapsible-stack">
-
-      <!-- ASPEN'S AGENTS (collapsible, featured dark) -->
-      <div class="collapsible">
-        <button class="collapsible-toggle featured" aria-expanded="false">
-          <div class="avatar-small avatar-aspen">AP</div>
-          <div class="collapsible-info">
-            <div class="collapsible-name">Aspen's AI Employees</div>
-            <div class="collapsible-role">Strategy · Content · Ops · Voice · Research · App</div>
-          </div>
-          <div class="collapsible-right">
-            <div class="agent-count">7 Agents</div>
-            <svg class="chevron" viewBox="0 0 20 20"><path d="M5.25 7.5L10 12.25L14.75 7.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-        </button>
-        <div class="collapsible-body">
-          <div class="agent-grid">
-
-            <div class="agent-card">
-              <div class="agent-header">
-                <div class="agent-icon">SC</div>
-                <div class="agent-name">Strategy Claude</div>
-              </div>
-              <div class="agent-desc">Business strategy, offer positioning, funnel mapping, and long-term scale decisions. Pulls from Master Plan and 5-Year vision.</div>
-              <span class="agent-tag tag-ondemand"><span class="dot"></span>On Demand</span>
-            </div>
-
-            <div class="agent-card">
-              <div class="agent-header">
-                <div class="agent-icon">CC</div>
-                <div class="agent-name">Content Claude</div>
-              </div>
-              <div class="agent-desc">Runs the 9-step Content SOP. Turns rough scripts into filmable videos while protecting voice. Files into all three databases.</div>
-              <span class="agent-tag tag-ondemand"><span class="dot"></span>On Demand</span>
-            </div>
-
-            <div class="agent-card">
-              <div class="agent-header">
-                <div class="agent-icon">NO</div>
-                <div class="agent-name">Notion Ops Claude</div>
-              </div>
-              <div class="agent-desc">Builds, edits, and maintains the Notion workspace. Master Plan updates, database hygiene, and page structure changes.</div>
-              <span class="agent-tag tag-ondemand"><span class="dot"></span>On Demand</span>
-            </div>
-
-            <div class="agent-card">
-              <div class="agent-header">
-                <div class="agent-icon">BV</div>
-                <div class="agent-name">Brand Voice Writer</div>
-              </div>
-              <div class="agent-desc">Emails, captions, DMs, and sales copy in Aspen's exact voice. Trained on the Voice Training Doc.</div>
-              <span class="agent-tag tag-ondemand"><span class="dot"></span>On Demand</span>
-            </div>
-
-            <div class="agent-card">
-              <div class="agent-header">
-                <div class="agent-icon">RA</div>
-                <div class="agent-name">Research Agent</div>
-              </div>
-              <div class="agent-desc">Finds, verifies, and files data points for content. Stats, cycle science, and cultural references with source checks.</div>
-              <span class="agent-tag tag-ondemand"><span class="dot"></span>On Demand</span>
-            </div>
-
-            <div class="agent-card">
-              <div class="agent-header">
-                <div class="agent-icon">PL</div>
-                <div class="agent-name">Cycle-Aware Prompt Library</div>
-              </div>
-              <div class="agent-desc">A growing library of prompts tuned to each phase. The engine behind CAIK and the Phase-First app's AI planner.</div>
-              <span class="agent-tag tag-scheduled"><span class="dot"></span>Scheduled</span>
-            </div>
-
-            <div class="agent-card">
-              <div class="agent-header">
-                <div class="agent-icon">PF</div>
-                <div class="agent-name">Phase-First App</div>
-              </div>
-              <div class="agent-desc">Cycle-aware planning app. AI weekly planner, phase engine, integration hub. Beta opens Oct 2026.</div>
-              <span class="agent-tag tag-development"><span class="dot"></span>In Development</span>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      <!-- ALICIA -->
-      <div class="collapsible">
-        <button class="collapsible-toggle" aria-expanded="false">
-          <div class="avatar-small avatar-alicia">A</div>
-          <div class="collapsible-info">
-            <div class="collapsible-name">Alicia</div>
-            <div class="collapsible-role">Producer · Brand Kit Design Lead</div>
-          </div>
-          <div class="collapsible-right">
-            <div class="agent-count">3 Agents</div>
-            <svg class="chevron" viewBox="0 0 20 20"><path d="M5.25 7.5L10 12.25L14.75 7.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-        </button>
-        <div class="collapsible-body">
-          <div class="agent-grid">
-            <div class="agent-card">
-              <div class="agent-header">
-                <div class="agent-icon">PP</div>
-                <div class="agent-name">Production Pipeline Manager</div>
-              </div>
-              <div class="agent-desc">Moves videos from Content Brain through filmed, edited, and scheduled. Flags blockers before they delay posts.</div>
-              <span class="agent-tag tag-live"><span class="dot"></span>Live</span>
-            </div>
-            <div class="agent-card">
-              <div class="agent-header">
-                <div class="agent-icon">EB</div>
-                <div class="agent-name">Editor Brief Writer</div>
-              </div>
-              <div class="agent-desc">Drafts revision notes and shot briefs for Lindsey, Diego, and Peyton. Handles Ready for Review feedback.</div>
-              <span class="agent-tag tag-live"><span class="dot"></span>Live</span>
-            </div>
-            <div class="agent-card">
-              <div class="agent-header">
-                <div class="agent-icon">BK</div>
-                <div class="agent-name">Brand Kit Designer</div>
-              </div>
-              <div class="agent-desc">Canva template designer trained on brand rules. Drives the Brand Kit product build and on-brand carousel design.</div>
-              <span class="agent-tag tag-live"><span class="dot"></span>Live</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ANNA -->
-      <div class="collapsible">
-        <button class="collapsible-toggle" aria-expanded="false">
-          <div class="avatar-small avatar-anna">A</div>
-          <div class="collapsible-info">
-            <div class="collapsible-name">Anna</div>
-            <div class="collapsible-role">VA · Brand Partnerships · Canva</div>
-          </div>
-          <div class="collapsible-right">
-            <div class="agent-count">4 Agents</div>
-            <svg class="chevron" viewBox="0 0 20 20"><path d="M5.25 7.5L10 12.25L14.75 7.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-        </button>
-        <div class="collapsible-body">
-          <div class="agent-grid">
-            <div class="agent-card">
-              <div class="agent-header">
-                <div class="agent-icon">BO</div>
-                <div class="agent-name">Brand Outreach Agent</div>
-              </div>
-              <div class="agent-desc">Drafts first-touch pitches and follow-ups for the brand partnerships pipeline. Logs every touchpoint in the tracker.</div>
-              <span class="agent-tag tag-live"><span class="dot"></span>Live</span>
-            </div>
-            <div class="agent-card">
-              <div class="agent-header">
-                <div class="agent-icon">CR</div>
-                <div class="agent-name">Content Repurposer</div>
-              </div>
-              <div class="agent-desc">Turns long-form episodes into carousels, threads, and email snippets without losing Aspen's voice.</div>
-              <span class="agent-tag tag-live"><span class="dot"></span>Live</span>
-            </div>
-            <div class="agent-card">
-              <div class="agent-header">
-                <div class="agent-icon">CD</div>
-                <div class="agent-name">Caption + DM Writer</div>
-              </div>
-              <div class="agent-desc">Writes captions, DMs, and comment replies that match the series, CTA, and voice rules for every post.</div>
-              <span class="agent-tag tag-live"><span class="dot"></span>Live</span>
-            </div>
-            <div class="agent-card">
-              <div class="agent-header">
-                <div class="agent-icon">YD</div>
-                <div class="agent-name">YouTube Description Writer</div>
-              </div>
-              <div class="agent-desc">SEO-aware descriptions for every long-form upload. Pulls timestamps, keywords, and links automatically.</div>
-              <span class="agent-tag tag-live"><span class="dot"></span>Live</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ANKUSH -->
-      <div class="collapsible">
-        <button class="collapsible-toggle" aria-expanded="false">
-          <div class="avatar-small avatar-ankush">A</div>
-          <div class="collapsible-info">
-            <div class="collapsible-name">Ankush</div>
-            <div class="collapsible-role">Funnel Engineer · ManyChat · Kit · GHL</div>
-          </div>
-          <div class="collapsible-right">
-            <div class="agent-count">2 Agents</div>
-            <svg class="chevron" viewBox="0 0 20 20"><path d="M5.25 7.5L10 12.25L14.75 7.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-        </button>
-        <div class="collapsible-body">
-          <div class="agent-grid">
-            <div class="agent-card">
-              <div class="agent-header">
-                <div class="agent-icon">FB</div>
-                <div class="agent-name">Flow Builder</div>
-              </div>
-              <div class="agent-desc">Drafts ManyChat keyword flows and Kit email sequences from a brief. Ankush approves before push to live.</div>
-              <span class="agent-tag tag-ondemand"><span class="dot"></span>On Demand</span>
-            </div>
-            <div class="agent-card">
-              <div class="agent-header">
-                <div class="agent-icon">AR</div>
-                <div class="agent-name">Analytics Reader</div>
-              </div>
-              <div class="agent-desc">Pulls conversion rates, keyword volume, and sequence health from GHL and Kit into weekly digests for Aspen.</div>
-              <span class="agent-tag tag-scheduled"><span class="dot"></span>Scheduled</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- MADDISON (non-expandable) -->
-      <div class="collapsible">
-        <div class="collapsible-toggle" style="cursor: default;">
-          <div class="avatar-small avatar-maddison">M</div>
-          <div class="collapsible-info">
-            <div class="collapsible-name">Maddison Koper</div>
-            <div class="collapsible-role">Trademark Attorney · Sunshine Law · External</div>
-          </div>
-          <div class="collapsible-right">
-            <div class="agent-count">On Retainer</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
 
     <!-- CTA CARD -->
     <section class="cta-card">
       <div class="cta-label">Coming Soon</div>
       <h2 class="cta-title">Build your AI team.</h2>
-      <p class="cta-sub">A done-with-you system to put your business on AI rails. So you can build without forcing it.</p>
+      <p class="cta-sub">A done-with-you system that makes you the architect of your own AI team. So you can stop forcing it.</p>
     </section>
 
   </div>
@@ -1265,42 +1311,42 @@
     </section>
 
     <div class="section-label">V1 Features</div>
-    <div class="agent-grid" style="margin-bottom: 56px;">
+    <div class="feature-grid">
 
-      <div class="agent-card">
-        <div class="agent-header">
-          <div class="agent-icon">CP</div>
-          <div class="agent-name">Cycle Tracking + Phase Engine</div>
+      <div class="feature-card">
+        <div class="feature-header">
+          <div class="feature-icon">CP</div>
+          <div class="feature-name">Cycle Tracking + Phase Engine</div>
         </div>
-        <div class="agent-desc">The backbone. Four phases, auto-detected, surfaced everywhere in the app.</div>
-        <span class="agent-tag tag-development"><span class="dot"></span>In Development</span>
+        <div class="feature-desc">The backbone. Four phases, auto-detected, surfaced everywhere in the app.</div>
+        <span class="feature-tag"><span class="dot"></span>In Development</span>
       </div>
 
-      <div class="agent-card">
-        <div class="agent-header">
-          <div class="agent-icon">WP</div>
-          <div class="agent-name">AI Weekly Planner</div>
+      <div class="feature-card">
+        <div class="feature-header">
+          <div class="feature-icon">WP</div>
+          <div class="feature-name">AI Weekly Planner</div>
         </div>
-        <div class="agent-desc">Plans her week around her phase, not against it. Powered by the Cycle-Aware Prompt Library.</div>
-        <span class="agent-tag tag-development"><span class="dot"></span>In Development</span>
+        <div class="feature-desc">Plans her week around her phase, not against it. Powered by the Cycle-Aware Prompt Library.</div>
+        <span class="feature-tag"><span class="dot"></span>In Development</span>
       </div>
 
-      <div class="agent-card">
-        <div class="agent-header">
-          <div class="agent-icon">IH</div>
-          <div class="agent-name">Integration Hub</div>
+      <div class="feature-card">
+        <div class="feature-header">
+          <div class="feature-icon">IH</div>
+          <div class="feature-name">Integration Hub</div>
         </div>
-        <div class="agent-desc">Read-only Google Calendar OAuth. Pulls her existing schedule into the phase view.</div>
-        <span class="agent-tag tag-development"><span class="dot"></span>In Development</span>
+        <div class="feature-desc">Read-only Google Calendar OAuth. Pulls her existing schedule into the phase view.</div>
+        <span class="feature-tag"><span class="dot"></span>In Development</span>
       </div>
 
-      <div class="agent-card">
-        <div class="agent-header">
-          <div class="agent-icon">BD</div>
-          <div class="agent-name">Brain Dump · Triage</div>
+      <div class="feature-card">
+        <div class="feature-header">
+          <div class="feature-icon">BD</div>
+          <div class="feature-name">Brain Dump · Triage</div>
         </div>
-        <div class="agent-desc">She dumps everything. The app sorts it into her phase-aware plan.</div>
-        <span class="agent-tag tag-development"><span class="dot"></span>In Development</span>
+        <div class="feature-desc">She dumps everything. The app sorts it into her phase-aware plan.</div>
+        <span class="feature-tag"><span class="dot"></span>In Development</span>
       </div>
 
     </div>
@@ -1343,21 +1389,8 @@
 
 </div>
 
-<!-- ZOOM CONTROLS -->
-<div class="zoom-controls" aria-label="Zoom controls">
-  <button class="zoom-btn" id="zoom-in" aria-label="Zoom in" title="Zoom in">
-    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
-  </button>
-  <div class="zoom-level" id="zoom-level">100%</div>
-  <button class="zoom-btn" id="zoom-out" aria-label="Zoom out" title="Zoom out">
-    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="8" y1="11" x2="14" y2="11"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
-  </button>
-  <button class="zoom-btn" id="zoom-reset" aria-label="Reset zoom" title="Reset to 100%">
-    <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7"/><polyline points="3 3 3 9 9 9"/></svg>
-  </button>
-</div>
-
 <script>
+  // Tab switching
   const tabs = document.querySelectorAll('.tab');
   const contents = document.querySelectorAll('.tab-content');
 
@@ -1371,67 +1404,28 @@
     });
   });
 
-  const toggles = document.querySelectorAll('.collapsible-toggle');
-  toggles.forEach(toggle => {
-    const block = toggle.closest('.collapsible');
-    const body = block.querySelector('.collapsible-body');
-    if (!body) return;
-    toggle.addEventListener('click', () => {
-      const isOpen = block.classList.contains('open');
-      block.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', !isOpen);
+  // Card expansion - click on agent pill or anywhere on card toggles
+  const agentsPills = document.querySelectorAll('.agents-pill');
+  agentsPills.forEach(pill => {
+    pill.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const card = pill.closest('.card');
+      card.classList.toggle('expanded');
+      pill.classList.toggle('active');
     });
   });
 
-  // ZOOM CONTROLS
-  const zoomLevels = [0.75, 0.9, 1.0, 1.15, 1.35, 1.6, 2.0];
-  let zoomIndex = 2; // start at 100%
-  const wrap = document.querySelector('.wrap');
-  const zoomInBtn = document.getElementById('zoom-in');
-  const zoomOutBtn = document.getElementById('zoom-out');
-  const zoomResetBtn = document.getElementById('zoom-reset');
-  const zoomLabel = document.getElementById('zoom-level');
-
-  function applyZoom() {
-    const z = zoomLevels[zoomIndex];
-    // Use CSS zoom property (works in Chrome, Safari, Edge, and modern Firefox)
-    wrap.style.zoom = z;
-    zoomLabel.textContent = Math.round(z * 100) + '%';
-  }
-
-  zoomInBtn.addEventListener('click', () => {
-    if (zoomIndex < zoomLevels.length - 1) {
-      zoomIndex++;
-      applyZoom();
-    }
-  });
-
-  zoomOutBtn.addEventListener('click', () => {
-    if (zoomIndex > 0) {
-      zoomIndex--;
-      applyZoom();
-    }
-  });
-
-  zoomResetBtn.addEventListener('click', () => {
-    zoomIndex = 2;
-    applyZoom();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  // Keyboard shortcuts: Cmd/Ctrl + / - / 0
-  document.addEventListener('keydown', (e) => {
-    if (!(e.metaKey || e.ctrlKey)) return;
-    if (e.key === '=' || e.key === '+') {
-      e.preventDefault();
-      zoomInBtn.click();
-    } else if (e.key === '-') {
-      e.preventDefault();
-      zoomOutBtn.click();
-    } else if (e.key === '0') {
-      e.preventDefault();
-      zoomResetBtn.click();
-    }
+  // Also allow clicking the whole card (but not on the reports pill or other pills)
+  const cards = document.querySelectorAll('.card[data-person]');
+  cards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      // Don't trigger if clicking on pills directly
+      if (e.target.closest('.pill')) return;
+      const agentsPill = card.querySelector('.agents-pill');
+      if (!agentsPill) return;
+      card.classList.toggle('expanded');
+      agentsPill.classList.toggle('active');
+    });
   });
 </script>
 </body>
