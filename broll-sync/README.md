@@ -19,3 +19,9 @@ Manual/pilot: Actions > "STYLST B-roll weekly sync" > Run workflow (dry_run on b
 Weekly: Sunday 8 AM Pacific (two UTC crons + a Pacific-hour guard for DST). Scheduled runs only act when repo
 variable `BROLL_PRODUCTION=true`, set at cutover from ChatGPT's "STYLST B-roll Upkeep".
 Tests: `cd broll-sync && python -m unittest discover -s tests -t .`
+
+## Pilot (two files only)
+`python -m broll_sync --pilot config/pilot.json [--dry-run]` touches only the IDs in `config/pilot.json`.
+Cloud: workflow "STYLST B-roll PILOT" (manual; preview by default). It never reads `BROLL_PRODUCTION`.
+State is saved to branch `broll-state` (`state/*.jsonl`); never contains credentials. CI logs hold IDs and results only,
+no filenames or names. Sign-in setup: `docs/AUTH_SETUP.md`.

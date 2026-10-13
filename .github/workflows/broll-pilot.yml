@@ -1,0 +1,41 @@
+name: STYLST B-roll PILOT (two files only)
+# Manual only. Touches ONLY the two originals in broll-sync/config/pilot.json. Never reads BROLL_PRODUCTION.
+on:
+  workflow_dispatch:
+    inputs:
+      mode: {description: "preview = read-only; create = make the missing pilot shortcuts", type: choice, options: [preview, create], default: preview}
+  # schedule:            # bounded automatic-start test: enable ONLY after approval, preview mode, then remove
+  #   - cron: "0 * * * *"
+permissions: {contents: write, issues: write}
+concurrency: {group: broll-sync, cancel-in-progress: false}
+jobs:
+  pilot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Show exactly what is being tested
+        run: |
+          echo "repo=${{ github.repository }} ref=${{ github.ref_name }} sha=${{ github.sha }} event=${{ github.event_name }} mode=${{ inputs.mode || 'preview' }}"
+      - name: Load saved state
+        run: |
+          mkdir -p broll-sync/state
+          if git rev-parse -q --verify origin/broll-state >/dev/null; then git archive origin/broll-state state | tar -x -C broll-sync; fi
+      - name: Unit tests
+        working-directory: broll-sync
+        run: pip install requests && python -m unittest discover -s tests -t .
+      - name: Pilot
+        working-directory: broll-sync
+        env:
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+        run: |
+          ARGS="--pilot config/pilot.json"; [ "${{ inputs.mode || 'preview' }}" = "create" ] || ARGS="$ARGS --dry-run"
+          python -m broll_sync $ARGS
+      - name: Save pilot state
+        if: always() && inputs.mode == 'create'
+        run: bash broll-sync/tools/save_state.sh

@@ -1,33 +1,42 @@
-name: STYLST B-roll weekly sync
+name: STYLST B-roll weekly sync (production)
+# Scheduled runs only act when repository variable BROLL_PRODUCTION == 'true' (currently not set).
 on:
   schedule:
-    - cron: "0 15 * * 0"   # Sunday 08:00 PDT (UTC-7)
-    - cron: "0 16 * * 0"   # Sunday 08:00 PST (UTC-8); the guard below runs only the right one
+    - cron: "0 15 * * 0"   # Sunday 08:00 PDT
+    - cron: "0 16 * * 0"   # Sunday 08:00 PST; the guard below lets only the correct one run
   workflow_dispatch:
     inputs:
-      dry_run: {description: "List what would be created, create nothing", type: boolean, default: true}
-      only_ids: {description: "Comma list of original file IDs (pilot test)", type: string, default: ""}
+      dry_run: {description: "Read-only preview (no writes, no saved state)", type: boolean, default: true}
 permissions: {contents: write, issues: write}
 concurrency: {group: broll-sync, cancel-in-progress: false}
 jobs:
   sync:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 90
     steps:
-      - uses: actions/checkout@v4
-      - name: Pacific-time guard and production gate
+      - name: Gate
         id: gate
         run: |
+          run=true
           if [ "${{ github.event_name }}" = "schedule" ]; then
-            [ "$(TZ=America/Los_Angeles date +%H)" = "08" ] || { echo "run=false" >> $GITHUB_OUTPUT; exit 0; }
-            # Scheduled runs are production runs. Off until the cutover is approved.
-            [ "${{ vars.BROLL_PRODUCTION }}" = "true" ] || { echo "::warning::BROLL_PRODUCTION is not 'true'; scheduled run skipped"; echo "run=false" >> $GITHUB_OUTPUT; exit 0; }
+            [ "$(TZ=America/Los_Angeles date +%H)" = "08" ] || run=false
           fi
-          echo "run=true" >> $GITHUB_OUTPUT
+          if [ "$run" = true ] && [ "${{ github.event_name }}" = "schedule" -o "${{ inputs.dry_run }}" = "false" ]; then
+            [ "${{ vars.BROLL_PRODUCTION }}" = "true" ] || { echo "::warning::BROLL_PRODUCTION is not true; production writes are off"; run=false; }
+          fi
+          echo "run=$run" >> $GITHUB_OUTPUT
+      - uses: actions/checkout@v4
+        if: steps.gate.outputs.run == 'true'
+        with: {fetch-depth: 0}
       - uses: actions/setup-python@v5
         if: steps.gate.outputs.run == 'true'
         with: {python-version: "3.12"}
-      - name: Install and unit test
+      - name: Load saved state
+        if: steps.gate.outputs.run == 'true'
+        run: |
+          mkdir -p broll-sync/state
+          if git rev-parse -q --verify origin/broll-state >/dev/null; then git archive origin/broll-state state | tar -x -C broll-sync; fi
+      - name: Unit tests
         if: steps.gate.outputs.run == 'true'
         working-directory: broll-sync
         run: pip install requests && python -m unittest discover -s tests -t .
@@ -39,34 +48,19 @@ jobs:
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
           GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
         run: |
-          ARGS=""
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            [ "${{ inputs.dry_run }}" = "true" ] && ARGS="--dry-run"
-            [ -n "${{ inputs.only_ids }}" ] && ARGS="$ARGS --only-ids ${{ inputs.only_ids }}"
-          fi
-          python -m broll_sync $ARGS | tee run.log
-      - name: Save durable run record (branch broll-state)
-        if: always() && steps.gate.outputs.run == 'true' && hashFiles('broll-sync/state/runs.jsonl') != ''
-        run: |
-          git config user.name "broll-sync"; git config user.email "broll-sync@users.noreply.github.com"
-          git fetch origin broll-state 2>/dev/null && git checkout -B broll-state origin/broll-state -- 2>/dev/null || git checkout --orphan broll-state
-          mkdir -p /tmp/st && cp broll-sync/state/* /tmp/st/ 2>/dev/null || true
-          git rm -rf -q . 2>/dev/null || true; mkdir -p state
-          git show origin/broll-state:state/runs.jsonl >> state/runs.jsonl 2>/dev/null || true
-          git show origin/broll-state:state/mapping.jsonl >> state/mapping.jsonl 2>/dev/null || true
-          cat /tmp/st/runs.jsonl >> state/runs.jsonl; cat /tmp/st/mapping.jsonl >> state/mapping.jsonl
-          git add state && git commit -q -m "run record $(date -u +%FT%TZ)" && git push -q origin broll-state
-      - name: Alert (open or update one issue) only on failure
+          ARGS=""; [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "true" ] && ARGS="--dry-run"
+          python -m broll_sync $ARGS
+      - name: Save state (also after a partial/failed run)
+        if: always() && steps.gate.outputs.run == 'true' && inputs.dry_run != true
+        run: bash broll-sync/tools/save_state.sh
+      - name: Alert once (open/update one issue) on failure
         if: failure() && steps.gate.outputs.run == 'true'
         uses: actions/github-script@v7
         with:
           script: |
             const title = "B-roll sync needs attention";
-            const body = `Run ${context.runId} failed or was partial: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}\nExit 2 = Google sign-in needs renewing. Exit 1 = some folders/files could not be processed; unfinished work is retried next run.`;
+            const body = `Run failed or was partial: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}\n\nExit 2 = Google sign-in/access needs a human. Exit 1 = some items could not be processed; they are retried next run.`;
             const open = await github.rest.issues.listForRepo({...context.repo, state: "open", per_page: 100});
             const ex = open.data.find(i => i.title === title);
             if (ex) await github.rest.issues.createComment({...context.repo, issue_number: ex.number, body});
             else await github.rest.issues.create({...context.repo, title, body});
-      - uses: actions/upload-artifact@v4
-        if: always() && steps.gate.outputs.run == 'true'
-        with: {name: broll-run-log, path: broll-sync/run.log, retention-days: 90}
