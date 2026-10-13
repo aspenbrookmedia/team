@@ -1,0 +1,18 @@
+{
+  "library_id": "1Xgo-G-cgH57hJ2VlLhcZhsHTJkvm3op9",
+  "unsorted_id": "1Gmta1ARn7X5VzXQIxPPfun9aFvbgCXn6",
+  "exclude_regex": "(?i)\\b(meetings?|hr|legal|payroll|contracts?|invoices?|b-?roll library)\\b",
+  "sources": [
+    {"creator": "Amanda",  "folder_id": "1dgXB6h_qflBwa-F1QrxThVb9z3fq1crW"},
+    {"creator": "Anna",    "folder_id": "1QIzofOYpN_TRGoC1tpwP33TlpjEsWEA3"},
+    {"creator": "Cassidy", "folder_id": "17GDxCPL_W2fL5vTaJ54v5QxQ7AwP1J2e"},
+    {"creator": "Deanne",  "folder_id": "1ORsqTrvQncGw47vl0dLD1OMOMYWrKpeA"},
+    {"creator": "Faith",   "folder_id": "1x2AP_NINaVG0lo84XfZg3aaVqcbtkuYL"},
+    {"creator": "Grace",   "folder_id": "17ZvvatLgqef6Cm1H6tLJA7EJ0Zsi-ixI"},
+    {"creator": "Kira",    "folder_id": "14ji4BXReQLD1et_1US3Y6AbKQXA_P5W8"},
+    {"creator": "Marchel", "folder_id": "1ZGgsIwogEUCj8-56gMiQ-kwkSpAI-kCT"},
+    {"creator": "Marchel", "folder_id": "1GVfYUfKSrNwn92tKZT8XBHm0jJmlbxP0"},
+    {"creator": "Mya",     "folder_id": "1D0uiZQQSk7UC1RffCQc7LVLhst-xCg5W"},
+    {"creator": "Shouq",   "folder_id": "1H_YTXfTH-auhgDnF_KikuJZMbx2_hjau"}
+  ]
+}

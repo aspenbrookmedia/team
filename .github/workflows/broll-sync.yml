@@ -1,0 +1,49 @@
+name: STYLST B-roll weekly sync
+on:
+  schedule:
+    - cron: "0 15 * * 0"   # Sunday 08:00 PDT (UTC-7)
+    - cron: "0 16 * * 0"   # Sunday 08:00 PST (UTC-8); the guard below runs only the right one
+  workflow_dispatch:
+    inputs:
+      dry_run: {description: "List what would be created, create nothing", type: boolean, default: true}
+      only_ids: {description: "Comma list of original file IDs (pilot test)", type: string, default: ""}
+concurrency: {group: broll-sync, cancel-in-progress: false}
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pacific-time guard and production gate
+        id: gate
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            [ "$(TZ=America/Los_Angeles date +%H)" = "08" ] || { echo "run=false" >> $GITHUB_OUTPUT; exit 0; }
+            # Scheduled runs are production runs. Off until the cutover is approved.
+            [ "${{ vars.BROLL_PRODUCTION }}" = "true" ] || { echo "::warning::BROLL_PRODUCTION is not 'true'; scheduled run skipped"; echo "run=false" >> $GITHUB_OUTPUT; exit 0; }
+          fi
+          echo "run=true" >> $GITHUB_OUTPUT
+      - uses: actions/setup-python@v5
+        if: steps.gate.outputs.run == 'true'
+        with: {python-version: "3.12"}
+      - name: Install and unit test
+        if: steps.gate.outputs.run == 'true'
+        working-directory: broll-sync
+        run: pip install requests && python -m unittest discover -s tests -t .
+      - name: Sync
+        if: steps.gate.outputs.run == 'true'
+        working-directory: broll-sync
+        env:
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+        run: |
+          ARGS=""
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            [ "${{ inputs.dry_run }}" = "true" ] && ARGS="--dry-run"
+            [ -n "${{ inputs.only_ids }}" ] && ARGS="$ARGS --only-ids ${{ inputs.only_ids }}"
+          fi
+          python -m broll_sync $ARGS | tee run.log
+      - uses: actions/upload-artifact@v4
+        if: always() && steps.gate.outputs.run == 'true'
+        with: {name: broll-run-log, path: broll-sync/run.log, retention-days: 90}
