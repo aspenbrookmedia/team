@@ -7,6 +7,7 @@ on:
     inputs:
       dry_run: {description: "List what would be created, create nothing", type: boolean, default: true}
       only_ids: {description: "Comma list of original file IDs (pilot test)", type: string, default: ""}
+permissions: {contents: write, issues: write}
 concurrency: {group: broll-sync, cancel-in-progress: false}
 jobs:
   sync:
@@ -44,6 +45,28 @@ jobs:
             [ -n "${{ inputs.only_ids }}" ] && ARGS="$ARGS --only-ids ${{ inputs.only_ids }}"
           fi
           python -m broll_sync $ARGS | tee run.log
+      - name: Save durable run record (branch broll-state)
+        if: always() && steps.gate.outputs.run == 'true' && hashFiles('broll-sync/state/runs.jsonl') != ''
+        run: |
+          git config user.name "broll-sync"; git config user.email "broll-sync@users.noreply.github.com"
+          git fetch origin broll-state 2>/dev/null && git checkout -B broll-state origin/broll-state -- 2>/dev/null || git checkout --orphan broll-state
+          mkdir -p /tmp/st && cp broll-sync/state/* /tmp/st/ 2>/dev/null || true
+          git rm -rf -q . 2>/dev/null || true; mkdir -p state
+          git show origin/broll-state:state/runs.jsonl >> state/runs.jsonl 2>/dev/null || true
+          git show origin/broll-state:state/mapping.jsonl >> state/mapping.jsonl 2>/dev/null || true
+          cat /tmp/st/runs.jsonl >> state/runs.jsonl; cat /tmp/st/mapping.jsonl >> state/mapping.jsonl
+          git add state && git commit -q -m "run record $(date -u +%FT%TZ)" && git push -q origin broll-state
+      - name: Alert (open or update one issue) only on failure
+        if: failure() && steps.gate.outputs.run == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = "B-roll sync needs attention";
+            const body = `Run ${context.runId} failed or was partial: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}\nExit 2 = Google sign-in needs renewing. Exit 1 = some folders/files could not be processed; unfinished work is retried next run.`;
+            const open = await github.rest.issues.listForRepo({...context.repo, state: "open", per_page: 100});
+            const ex = open.data.find(i => i.title === title);
+            if (ex) await github.rest.issues.createComment({...context.repo, issue_number: ex.number, body});
+            else await github.rest.issues.create({...context.repo, title, body});
       - uses: actions/upload-artifact@v4
         if: always() && steps.gate.outputs.run == 'true'
         with: {name: broll-run-log, path: broll-sync/run.log, retention-days: 90}

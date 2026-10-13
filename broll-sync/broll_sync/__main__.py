@@ -23,6 +23,11 @@ def main():
     except AuthError as e:
         print(f"::error::AUTH FAILURE (needs human re-consent): {e}"); return 2
     print("SUMMARY " + json.dumps(summary))
+    if not a.dry_run and not a.only_ids:
+        os.makedirs("state", exist_ok=True)   # committed to branch broll-state by the workflow
+        with open("state/runs.jsonl", "a") as f: f.write(json.dumps(summary) + "\n")
+        with open("state/mapping.jsonl", "a") as f:
+            for r in s.rows: f.write(json.dumps(r) + "\n")
     return 0 if summary["status"] == "ok" else 1
 
 

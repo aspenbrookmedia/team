@@ -113,6 +113,19 @@ class Sync:
                     row.update(result="error", error=str(e)); self.errors.append(row)
                 self.rows.append(row)
                 self.log(json.dumps(row))
+        broken = self.check_broken(targets, {r["original_id"] for r in self.rows})
         return {"started": started, "finished": self.now(), "added": added, "skipped_existing": skipped,
                 "held": held, "errors": len(self.errors), "unresolved_folders": self.unresolved,
-                "status": "ok" if not self.errors and not self.unresolved else "partial"}
+                "broken_shortcuts": broken,
+                "status": "ok" if not (self.errors or self.unresolved or broken) else "partial"}
+
+    def check_broken(self, targets, just_created):
+        """Library shortcuts whose original is gone/inaccessible (trashed, deleted, access lost)."""
+        broken = []
+        for tid, sid in targets.items():
+            if tid in just_created: continue
+            try:
+                if self.d.get(tid, "id,trashed").get("trashed"): broken.append({"shortcut": sid, "target": tid, "why": "trashed"})
+            except DriveError as e:
+                broken.append({"shortcut": sid, "target": tid, "why": str(e)[:120]})
+        return broken

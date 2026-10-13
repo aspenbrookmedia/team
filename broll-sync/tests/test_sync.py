@@ -80,6 +80,12 @@ class T(unittest.TestCase):
         d.create_shortcut = orig
         self.assertEqual(self.run_sync(d).run()["added"], 1)   # only the failed one
 
+    def test_broken_shortcut_reported(self):
+        d = world(); self.run_sync(d).run()
+        d.f["m2"]["denied"] = True; d.f["m1"]["trashed"] = True
+        r = self.run_sync(d).run()
+        self.assertEqual(r["status"], "partial"); self.assertEqual(len(r["broken_shortcuts"]), 2)
+
     def test_dry_run_creates_nothing(self):
         d = world(); self.run_sync(d, dry_run=True).run()
         self.assertFalse([x for x in d.f.values() if x["mimeType"] == SHORTCUT])
